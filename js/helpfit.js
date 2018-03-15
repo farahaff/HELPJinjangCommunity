@@ -1,5 +1,5 @@
 function memType(mtype) {
-    // 1 = member , 2= trainder
+    // 1 = member , 2= trainer
     $("#selmemtype").val(mtype);
 
 }

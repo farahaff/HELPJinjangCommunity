@@ -1,5 +1,5 @@
 function memType(mtype) {
-    // 1 = member , 2= trainer
+    // 1 = member , 2= trainder
     $("#selmemtype").val(mtype);
 
 }
@@ -28,16 +28,16 @@ function formSubmitm($usertype) {
         url: "ssignup.php",
         data: dataString,
         success: function (response) {
-            //after success display teh msg
+            //after success display the msg
             alert("Successfully Registered!");
-            window.location = "login.php";
+            window.location = "Login.php";
         }
 
     });
     event.preventDefault();
 
 }
-//trainer registeration
+//trainer registration
 function formSubmitT($usertype) {
 
     //var name = document.getElementById("name").value;
@@ -57,7 +57,7 @@ function formSubmitT($usertype) {
         success: function (response) {
             //after success display teh msg
             alert("Successfully Registered!");
-            window.location = "login.php";
+            window.location = "Login.php";
         }
 
     });

@@ -12,7 +12,7 @@ unset($_SESSION["logoutmsg"]);
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>HELPFIT - Training System</title>
+        <title>Jinjang Reformation Initiative</title>
 
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -36,18 +36,18 @@ unset($_SESSION["logoutmsg"]);
       //-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo2 copy.png" alt="" width="175"></a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">JINJANG REFORMATION INITIATIVE <small><br>by HELP Group</small></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fa fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
+                <div class="collapse navbar-collapse dropdown-content" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                            <a class="nav-link js-scroll-trigger" href="#about">Info</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
+                            <a class="nav-link js-scroll-trigger" href="#contact">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="login.php">Login</a>
@@ -61,8 +61,7 @@ unset($_SESSION["logoutmsg"]);
         <header class="masthead">
             <div class="container">
                 <div class="intro-text">
-                    <div class="intro-lead-in">Welcome To HELPFIT!</div>
-                    <div class="intro-heading">1st Choice Fitness Centre</div>
+                    <div class="intro-lead-in">Impact a life, transform a community</div>
                     <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="signup.php">Sign up</a>
                 </div>
             </div>

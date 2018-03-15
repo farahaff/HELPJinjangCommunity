@@ -20,7 +20,7 @@ class Db {
     private $last_id = 0;
 
     /*
-     * Call connect method ,at the initialization fo the class,so db connection made automatically
+     * Call connect method, at the initialization for the class, so db connection made automatically
      * when we include this file
      */
 

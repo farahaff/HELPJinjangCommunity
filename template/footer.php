@@ -62,8 +62,8 @@
 <script src="js/agency.min.js"></script>
 
 
-<!-- for web site javascript functions  !-->
-<script type="text/javascript" src="js/helpfit.js"></script>
+<!-- For web site javascript functions  !-->
+<script type="text/javascript" src="js/jinjang.js"></script>
 
 </body>
 

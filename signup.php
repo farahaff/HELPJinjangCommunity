@@ -106,12 +106,8 @@
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <label for="level" style="color:black;">Level</label>
-                                                <select class="form-control" id="level">
-                                                    <option value="1">Beginner</option>
-                                                    <option value="2">Advanced</option>
-                                                    <option value="3">Expert</option>
-                                                </select>
+                                                <input class="form-control" id="jmobileno" type="text" placeholder="Mobile No *" required data-validation-required-message="Please enter your mobile number.">
+                                                <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="clearfix"></div>
                                             <div class="col-lg-12 text-center">
@@ -149,7 +145,7 @@
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="tspecialty" type="text" placeholder="Specialty *" required data-validation-required-message="Please enter your specialty.">
+                                                <input class="form-control" id="emobileno" type="text" placeholder="Mobile No *" required data-validation-required-message="Please enter your mobile number.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="clearfix"></div>

@@ -3,7 +3,7 @@ function memType(mtype) {
     $("#selmemtype").val(mtype);
 
 }
-//check if it display teh right value
+//check if it display the right value
 function showID() {
     var selectedValue = $("#selmemtype").val();
     //alert(singleValues);

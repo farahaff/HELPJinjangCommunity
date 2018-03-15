@@ -10,7 +10,7 @@
             <div class="col-md-12">
                 <div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    Hi <strong><?php echo ucfirst($_SESSION['name']) ?>,</strong> Welcome back to HELPFIT!
+                    Hi <strong><?php echo ucfirst($_SESSION['name']) ?>,</strong> Welcome back!
                 </div>
             </div>
         </div>

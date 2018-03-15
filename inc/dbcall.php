@@ -113,7 +113,7 @@ class Db {
                 // store user name and user type in session
                 $_SESSION['name'] = $row['username'];
                 $_SESSION['usertype'] = $row['usertype']; // USER TYpe = 1 member , 2= trainer
-                $_SESSION['msd'] = "Succefully Logged In";
+                $_SESSION['msd'] = "Successfully Logged In";
                 $_SESSION['uniqueID'] = $row['idusers'];
                 $this->setMsg("Login successful!");
                 return true;

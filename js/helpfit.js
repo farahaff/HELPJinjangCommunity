@@ -37,7 +37,7 @@ function formSubmitm($usertype) {
     event.preventDefault();
 
 }
-//tariner registeration
+//trainer registeration
 function formSubmitT($usertype) {
 
     //var name = document.getElementById("name").value;

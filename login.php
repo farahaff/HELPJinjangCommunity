@@ -16,7 +16,7 @@ if (isset($_SESSION['name'])) {
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>HELPFIT - Training System</title>
+        <title>Jinjang Reformation Initiative</title>
 
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -71,7 +71,7 @@ if (isset($_SESSION['name'])) {
                     if ($db->authenticate($_POST['uname'], $_POST['pwd'])) {
                         $db->redirect('home.php');
                     } else {
-                        echo "<div class='row alert alert-success' > 
+                        echo "<div class='row alert alert-success' >
                     <div class='col-lg-12'>"
                         . $_SESSION['msg'] .
                         "</div></div>";
@@ -116,4 +116,3 @@ if (isset($_SESSION['name'])) {
 
         <?php
         require_once 'template/welfooter.php';
-        

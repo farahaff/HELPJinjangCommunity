@@ -13,7 +13,7 @@ class Db {
     const HOST = 'localhost';
     const USERNAME = 'root';
     const PWD = '';
-    const DBNAME = 'helpfit';
+    const DBNAME = 'jinjang';
 
     protected static $connection;
     public $error = array("msg" => null);
@@ -31,7 +31,7 @@ class Db {
 
     /**
      * Connect to the database
-     * 
+     *
      * @return bool false on failure / mysqli MySQLi object instance on success
      */
     public function connect() {
@@ -48,7 +48,7 @@ class Db {
         return self::$connection;
     }
 
-    //hash password 
+    //hash password
     public function makepwd($pwd) {
         return password_hash($pwd, PASSWORD_BCRYPT);
     }
@@ -86,7 +86,7 @@ class Db {
 
     /**
      * Fetch the last error from the database
-     * 
+     *
      * @return string Database error message
      */
     public function error() {
@@ -94,14 +94,14 @@ class Db {
     }
 
     /*
-     *  Authentication function 
+     *  Authentication function
      *  Based on the username and password supllied authneticate the user
      */
 
     public function authenticate($uname, $pwd) {
 
         // if(!$this->validate($uname,$pwd)){
-        //     //update seesion error msg 
+        //     //update seesion error msg
         //     return $error;
         // }
         $sql = "select * from users WHERE username='$uname' LIMIT 1";
@@ -110,9 +110,9 @@ class Db {
         $row = mysqli_fetch_assoc($result);
         if (mysqli_num_rows($result) > 0) {
             if (password_verify($pwd, $row['password'])) {
-                // store user name and user type in session 
+                // store user name and user type in session
                 $_SESSION['name'] = $row['username'];
-                $_SESSION['usertype'] = $row['usertype']; // USER TYpe = 1 member , 2= trainer 
+                $_SESSION['usertype'] = $row['usertype']; // USER TYpe = 1 member , 2= trainer
                 $_SESSION['msd'] = "Succefully Logged In";
                 $_SESSION['uniqueID'] = $row['idusers'];
                 $this->setMsg("Login successful!");

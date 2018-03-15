@@ -11,7 +11,7 @@ function showID() {
 }
 
 
-//member registeraion
+//member registration
 function formSubmitm($usertype) {
     //var name = document.getElementById("name").value;
     var musername = $("#musername").val();

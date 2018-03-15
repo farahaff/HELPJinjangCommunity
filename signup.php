@@ -73,7 +73,7 @@
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" style="color:#b20000;" data-toggle="tab" href="#member" role="tab">JobSeeker</a>
+                        <a class="nav-link active" style="color:#b20000;" data-toggle="tab" href="#member" role="tab">Job Seeker</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" style="color:#b20000;" data-toggle="tab" href="#trainer" role="tab">Employer</a>

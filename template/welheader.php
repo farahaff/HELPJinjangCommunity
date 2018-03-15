@@ -46,8 +46,45 @@ unset($_SESSION["logoutmsg"]);
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="#about">Info</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#contact">About Us</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                About Us
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
+                                <a class="dropdown-item js-scroll-trigger" href="#">About AGN</a>
+                                <a class="dropdown-item js-scroll-trigger" href="updateInfo.php">Our Work</a>
+                                <a class="dropdown-item js-scroll-trigger" href="home.php?logout">Literacy & Numeracy <br>Programme</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                How To Help
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
+                                <a class="dropdown-item js-scroll-trigger" href="#">Vounteering</a>
+                                <a class="dropdown-item js-scroll-trigger" href="updateInfo.php">Learning Materials</a>
+                                <a class="dropdown-item js-scroll-trigger" href="home.php?logout">Children School Supplies</a>
+                                <a class="dropdown-item js-scroll-trigger" href="home.php?logout">Sponsor a Child</a>
+                                <a class="dropdown-item js-scroll-trigger" href="home.php?logout">E-Business</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Donations
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
+                                <a class="dropdown-item js-scroll-trigger" href="#">Donate Now</a>
+                                <a class="dropdown-item js-scroll-trigger" href="updateInfo.php">Make a Pledge</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                News/Past Events
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
+                                <a class="dropdown-item js-scroll-trigger" href="#">Photo Gallery</a>
+                                <a class="dropdown-item js-scroll-trigger" href="updateInfo.php">Newspaper Write Ups</a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="login.php">Login</a>

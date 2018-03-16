@@ -73,7 +73,11 @@
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
+<<<<<<< HEAD
                         <a class="nav-link active" style="color:#b20000;" data-toggle="tab" href="#jobseeker" role="tab">JobSeeker</a>
+=======
+                        <a class="nav-link active" style="color:#b20000;" data-toggle="tab" href="#member" role="tab">Job Seeker</a>
+>>>>>>> cc47f0e73ca5c1e2860a5ebc0c4e787099963440
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" style="color:#b20000;" data-toggle="tab" href="#employer" role="tab">Employer</a>

@@ -7,10 +7,6 @@ $sql = "SELECT * FROM `users` WHERE `idusers` =" . $uniqueid . " LIMIT 1";
 $result = $db->query($sql);
 $row = mysqli_fetch_assoc($result);
 $pwd = $row['password'];
-//set the defualt user level 
-//1">Beginner</option>
-//2">Advanced</option>
-//3">Expert</option>
 $one = null;
 $two = null;
 $three = null;
@@ -94,6 +90,10 @@ if ($userType == 2) {
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control" id="email" type="email" name="email" required value="<?php echo $row['email']; ?>">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="mobileno" type="text" name="mobileno" required value="<?php echo $row['mobileno']; ?>">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <?php if ($userType == 1): ?>

@@ -12,17 +12,17 @@ function showID() {
 
 
 //member registration
-function formSubmitm($usertype) {
+function formSubmitJ($usertype) {
     //var name = document.getElementById("name").value;
-    var musername = $("#musername").val();
-    var pwd = $("#mpassword").val();
-    var fname = $("#mfullname").val();
-    var memail = $("#memail").val();
-    var mlevel = $("#level").val();
+    var jusername = $("#jusername").val();
+    var pwd = $("#jpassword").val();
+    var fname = $("#jfullname").val();
+    var jemail = $("#jemail").val();
+    var jmobileno = $("#jmobileno").val();
     //"1">Beginner</option>
     //"2">Advanced</option>
     //"3">Expert</option>
-    var dataString = 'name=' + musername + '&pwd=' + pwd + '&fname=' + fname + '&memail=' + memail + '&mlevel=' + mlevel + '&utype=' + $usertype;
+    var dataString = '&username=' + jusername + '&pwd=' + pwd + '&fname=' + fname + '&jemail=' + jemail + '&jmobileno=' + jmobileno + '&utype=' + $usertype;
     $.ajax({
         type: "POST",
         url: "ssignup.php",
@@ -30,7 +30,7 @@ function formSubmitm($usertype) {
         success: function (response) {
             //after success display the msg
             alert("Successfully Registered!");
-            window.location = "Login.php";
+            window.location = "login.php";
         }
 
     });

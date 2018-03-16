@@ -90,19 +90,19 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input class="form-control"  id="musername" type="text" placeholder="Username *" required data-validation-required-message="Please enter your username.">
+                                                <input class="form-control"  id="jusername" type="text" placeholder="Username *" required data-validation-required-message="Please enter your username.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="mpassword" type="password" placeholder="Password *" required data-validation-required-message="Please enter your password.">
+                                                <input class="form-control" id="jpassword" type="password" placeholder="Password *" required data-validation-required-message="Please enter your password.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="mfullname" type="text" placeholder="Full Name *" required data-validation-required-message="Please enter your full name.">
+                                                <input class="form-control" id="jfullname" type="text" placeholder="Full Name *" required data-validation-required-message="Please enter your full name.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="memail" type="email" placeholder="Email *" required data-validation-required-message="Please enter your email.">
+                                                <input class="form-control" id="jemail" type="email" placeholder="Email *" required data-validation-required-message="Please enter your email.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
@@ -114,7 +114,7 @@
                                                 <br/>
                                                 <div id="success"></div>
                                                 <button id="resetButton" class="btn btn-primary btn-xl text-uppercase" type="reset">Reset</button>
-                                                <button   class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitm(1);">Register</button>
+                                                <button   class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitJ(1);">Register</button>
                                             </div>
                                         </div>
                                     </div>
@@ -137,8 +137,27 @@
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="efullname" type="text" placeholder="Full Name *" required data-validation-required-message="Please enter your full name.">
+                                                <input class="form-control" id="efullname" type="text" placeholder="Name of Organization*" required data-validation-required-message="Please enter your full name.">
                                                 <p class="help-block text-danger"></p>
+                                            </div>
+                                            <div class="form-group">
+                                                <select class="form-control" id="etype">
+                                                    <option value="0">Type of Industry</option>
+                                                    <option value="1">Agriculture</option>
+                                                    <option value="2">Automotive</option>
+                                                    <option value="3">Construction</option>
+                                                    <option value="4">Education</option>
+                                                    <option value="5">Engineering</option>
+                                                    <option value="6">Entertainment</option>
+                                                    <option value="7">Finance</option>
+                                                    <option value="8">Food</option>
+                                                    <option value="9">Health Care</option>
+                                                    <option value="10">Information Technology</option>
+                                                    <option value="11">Marketing</option>
+                                                    <option value="12">Media/Comunication</option>
+                                                    <option value="13">Pharmaceutical</option>
+                                                    <option value="14">Others</option>
+                                                </select>
                                             </div>
                                             <div class="form-group">
                                                 <input class="form-control" id="eemail" type="email" placeholder="Email *" required data-validation-required-message="Please enter your email.">

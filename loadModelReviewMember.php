@@ -9,7 +9,7 @@ $sql = "SELECT * FROM `tsessions` WHERE `idtable1` =" . $sessionID . " LIMIT 1";
 $result = $db->query($sql);
 $row = mysqli_fetch_assoc($result);
 $date = date('F j, Y,', strtotime($row['tdate']));
-//$today = date("F j, Y, g:i a");  
+//$today = date("F j, Y, g:i a");
 $time = date('h:m A', strtotime($row['time']));
 if ($row['status'] == 1) {
     $status = "Available";
@@ -18,15 +18,15 @@ if ($row['status'] == 1) {
 } elseif ($row['status'] == 3) {
     $status = "Canceled";
 }
-//created by 
+//created by
 $createdby = $row['createdby'];
 $sql1 = "SELECT * FROM `users` WHERE idusers=" . $createdby;
 $result2 = $db->query($sql1);
-$row2 = mysqli_fetch_assoc($result2); //fname 
+$row2 = mysqli_fetch_assoc($result2); //fname
 //speciality
 $sql3 = "SELECT * FROM `usrspeciality`WHERE users_idusers=" . $createdby;
 $result3 = $db->query($sql3);
-$row3 = mysqli_fetch_assoc($result3); //fname 
+$row3 = mysqli_fetch_assoc($result3); //fname
 //get class type
 /*
  * 1
@@ -91,5 +91,3 @@ echo "<div class='row'>
                 </div>
             </div>
         </div>";
-
-

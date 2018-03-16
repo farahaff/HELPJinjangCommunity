@@ -73,17 +73,17 @@
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" style="color:#b20000;" data-toggle="tab" href="#member" role="tab">JobSeeker</a>
+                        <a class="nav-link active" style="color:#b20000;" data-toggle="tab" href="#jobseeker" role="tab">JobSeeker</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color:#b20000;" data-toggle="tab" href="#trainer" role="tab">Employer</a>
+                        <a class="nav-link" style="color:#b20000;" data-toggle="tab" href="#employer" role="tab">Employer</a>
                     </li>
 
                 </ul>
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div class="tab-pane active" id="member" role="tabpanel"><br/></br>
+                    <div class="tab-pane active" id="jobseeker" role="tabpanel"><br/></br>
                         <div class="row">
                             <div class="col-lg-12 offset-md-3">
                                 <form   id="contactForm" method="POST" novalidate>
@@ -122,26 +122,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane" id="trainer" role="tabpanel"><br/></br>
+                    <div class="tab-pane" id="employer" role="tabpanel"><br/></br>
                         <div class="row">
                             <div class="col-lg-12 offset-md-3">
                                 <form id="contactForm"  action="#" novalidate method="POST">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input class="form-control" id="tusername" type="text" placeholder="Username *" required data-validation-required-message="Please enter your username.">
+                                                <input class="form-control" id="eusername" type="text" placeholder="Username *" required data-validation-required-message="Please enter your username.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="tpwd" type="password" placeholder="Password *" required data-validation-required-message="Please enter your password.">
+                                                <input class="form-control" id="epwd" type="password" placeholder="Password *" required data-validation-required-message="Please enter your password.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="tfullname" type="text" placeholder="Full Name *" required data-validation-required-message="Please enter your full name.">
+                                                <input class="form-control" id="efullname" type="text" placeholder="Full Name *" required data-validation-required-message="Please enter your full name.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="temail" type="email" placeholder="Email *" required data-validation-required-message="Please enter your email.">
+                                                <input class="form-control" id="eemail" type="email" placeholder="Email *" required data-validation-required-message="Please enter your email.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">

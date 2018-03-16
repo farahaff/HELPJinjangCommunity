@@ -10,22 +10,23 @@ function showID() {
 
 }
 
-
-//member registration
-function formSubmitJ($usertype) {
+//job seeker registration
+function formSubmitJ() {
     //var name = document.getElementById("name").value;
     var jusername = $("#jusername").val();
     var pwd = $("#jpassword").val();
     var fname = $("#jfullname").val();
     var jemail = $("#jemail").val();
     var jmobileno = $("#jmobileno").val();
-    //"1">Beginner</option>
-    //"2">Advanced</option>
-    //"3">Expert</option>
-    var dataString = '&username=' + jusername + '&pwd=' + pwd + '&fname=' + fname + '&jemail=' + jemail + '&jmobileno=' + jmobileno + '&utype=' + $usertype;
+    var qualification = $("#qualification").val();
+    var skills = $("#skills").val();
+    var starttime = $("#starttime").val();
+    var endtime = $("#endtime").val();
+
+    var dataString = '&username=' + jusername + '&pwd=' + pwd + '&fname=' + fname + '&jemail=' + jemail + '&jmobileno=' + jmobileno + '&qualification=' + qualification + '&skills=' + skills + '&starttime=' + starttime + '&endtime=' + endtime;
     $.ajax({
         type: "POST",
-        url: "ssignup.php",
+        url: "jobseekersignup.php",
         data: dataString,
         success: function (response) {
             //after success display the msg
@@ -37,27 +38,27 @@ function formSubmitJ($usertype) {
     event.preventDefault();
 
 }
-//trainer registration
-function formSubmitT($usertype) {
+//employer registration
+function formSubmitE() {
 
     //var name = document.getElementById("name").value;
-    var tusername = $("#tusername").val();
-    var pwd = $("#tpwd").val();
-    var fname = $("#tfullname").val();
-    var temail = $("#temail").val();
-    var tspecialty = $("#tspecialty").val();
-    //"1">Beginner</option>
-    //"2">Advanced</option>
-    //"3">Expert</option>
-    var dataString = 'name=' + tusername + '&pwd=' + pwd + '&fname=' + fname + '&memail=' + temail + '&tspecialty=' + tspecialty + '&utype=' + $usertype;
+    var name = $("#eusername").val();
+    var pwd = $("#epassword").val();
+    var orgname = $("#orgname").val();
+    var industry = $("#industry").val();
+    //var type = $("#type").val();
+    var empemail = $("#empemail").val();
+    var emobileno = $("#emobileno").val();
+
+    var dataString = '&username=' + name + '&pwd=' + pwd + '&orgname=' + orgname + '&industry=' + industry + '&empemail=' + empemail + '&emobileno=' + emobileno;
     $.ajax({
         type: "POST",
-        url: "tsignup.php",
+        url: "employersignup.php",
         data: dataString,
         success: function (response) {
             //after success display teh msg
             alert("Successfully Registered!");
-            window.location = "Login.php";
+            window.location = "login.php";
         }
 
     });

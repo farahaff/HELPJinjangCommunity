@@ -1,7 +1,7 @@
 <?php require_once './template/header.php'; ?>
 
 <!--- Google charts -->
-<!-- About -->
+<!-- Aboutsomething -->
 <section>
     <br/>
     <div class="container" id="aboutHome">

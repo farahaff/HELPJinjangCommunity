@@ -109,6 +109,10 @@
                                                 <input class="form-control" id="jmobileno" type="text" placeholder="Mobile No *" required data-validation-required-message="Please enter your mobile number.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
+                                            <div class="form-group">
+                                                <input class="form-control" id="qualification" type="text" placeholder="Mobile No *" required data-validation-required-message="Please enter your mobile number.">
+                                                <p class="help-block text-danger"></p>
+                                            </div>
                                             <div class="clearfix"></div>
                                             <div class="col-lg-12 text-center">
                                                 <br/>
@@ -146,17 +150,18 @@
                                                     <option value="1">Agriculture</option>
                                                     <option value="2">Automotive</option>
                                                     <option value="3">Construction</option>
-                                                    <option value="4">Education</option>
-                                                    <option value="5">Engineering</option>
-                                                    <option value="6">Entertainment</option>
-                                                    <option value="7">Finance</option>
-                                                    <option value="8">Food</option>
-                                                    <option value="9">Health Care</option>
-                                                    <option value="10">Information Technology</option>
-                                                    <option value="11">Marketing</option>
-                                                    <option value="12">Media/Comunication</option>
-                                                    <option value="13">Pharmaceutical</option>
-                                                    <option value="14">Others</option>
+                                                    <option value="4">Cosmetics</option>
+                                                    <option value="5">Education</option>
+                                                    <option value="6">Engineering</option>
+                                                    <option value="7">Entertainment</option>
+                                                    <option value="8">Finance</option>
+                                                    <option value="9">Food</option>
+                                                    <option value="10">Health Care</option>
+                                                    <option value="11">Information Technology</option>
+                                                    <option value="12">Marketing</option>
+                                                    <option value="13">Media/Comunication</option>
+                                                    <option value="14">Pharmaceutical</option>
+                                                    <option value="15">Others</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">

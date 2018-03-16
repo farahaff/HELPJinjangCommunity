@@ -141,7 +141,7 @@
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="efullname" type="text" placeholder="Name of Organization*" required data-validation-required-message="Please enter your full name.">
+                                                <input class="form-control" id="eorgname" type="text" placeholder="Name of Organization*" required data-validation-required-message="Please enter your full name.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">

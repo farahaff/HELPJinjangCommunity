@@ -7,14 +7,14 @@ $db = new Db();
 //get user submitted values
 $name = $_POST['name'];
 $pwd = $db->makepwd($_POST['pwd']);
-$fname = $_POST['fname'];
+$eorgname = $_POST['eorgname'];
+$etype = $_POST['etype'];
 $eemail = $_POST['eemail'];
 $emobileno = $_POST['emobileno'];
-$etype = $_POST['etype'];
 $utype = $_POST['utype'];
 //end of member data
-$sql="INSERT INTO `users` (`username`, `password`, `fname`, `email`, `mobileno`, `address`, `etype` `usertype`)
-VALUES ('$name' ,'$pwd', '$fname', '$eemail', '$emobileno', '$etype', 'no', '$utype')";
+$sql="INSERT INTO `users` (`username`, `password`, `eorgname`, `etype`, `email`, `mobileno`, `address`, `usertype`)
+VALUES ('$name' ,'$pwd', '$eorgname', '$etype', '$eemail', '$emobileno', 'no', '$utype')";
 $db->query($sql);
 //get last inserted user id
 $userid = $db->getUserID();

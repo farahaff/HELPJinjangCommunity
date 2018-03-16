@@ -86,39 +86,53 @@
                     <div class="tab-pane active" id="jobseeker" role="tabpanel"><br/></br>
                         <div class="row">
                             <div class="col-lg-12 offset-md-3">
-                                <form   id="contactForm" method="POST" novalidate>
+                                <form id="contactForm" method="POST" novalidate>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input class="form-control"  id="jusername" type="text" placeholder="Username *" required data-validation-required-message="Please enter your username.">
+                                                <input class="form-control"  id="jusername" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="jpassword" type="password" placeholder="Password *" required data-validation-required-message="Please enter your password.">
+                                                <input class="form-control" id="jpassword" type="password" placeholder="Password*" required data-validation-required-message="Please enter your password.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="jfullname" type="text" placeholder="Full Name *" required data-validation-required-message="Please enter your full name.">
+                                                <input class="form-control" id="jfullname" type="text" placeholder="Full Name*" required data-validation-required-message="Please enter your full name.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="jemail" type="email" placeholder="Email *" required data-validation-required-message="Please enter your email.">
+                                                <input class="form-control" id="jemail" type="email" placeholder="Email*" required data-validation-required-message="Please enter your email.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="jmobileno" type="text" placeholder="Mobile No *" required data-validation-required-message="Please enter your mobile number.">
+                                                <input class="form-control" id="jmobileno" type="text" placeholder="Mobile No*" required data-validation-required-message="Please enter your mobile number.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="qualification" type="text" placeholder="Mobile No *" required data-validation-required-message="Please enter your mobile number.">
+                                              <textarea class="form-control" id="qualification" type="textarea" placeholder="Qualifications" required data-validation-required-message="Please enter your mobile number."></textarea>
                                                 <p class="help-block text-danger"></p>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="skills" type="textarea" placeholder="List your skills" required data-validation-required-message="Please enter your mobile number."></textarea>
+                                                <p class="help-block text-danger"></p>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                Availability: &nbsp <input id="starttime" type="time" placeholder="Start Time" required data-validation-required-message="Please enter your mobile number.">
+                                                &nbsp to &nbsp <input id="endtime" type="time" placeholder="End Time" required data-validation-required-message="Please enter your mobile number.">
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                Upload Resume:
+                                                <input type="file" name="fileToUpload">
                                             </div>
                                             <div class="clearfix"></div>
                                             <div class="col-lg-12 text-center">
                                                 <br/>
                                                 <div id="success"></div>
                                                 <button id="resetButton" class="btn btn-primary btn-xl text-uppercase" type="reset">Reset</button>
-                                                <button   class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitJ(1);">Register</button>
+                                                <button   class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitJ();">Register</button>
                                             </div>
                                         </div>
                                     </div>
@@ -137,16 +151,16 @@
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="epwd" type="password" placeholder="Password *" required data-validation-required-message="Please enter your password.">
+                                                <input class="form-control" id="epassword" type="password" placeholder="Password *" required data-validation-required-message="Please enter your password.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="eorgname" type="text" placeholder="Name of Organization*" required data-validation-required-message="Please enter your full name.">
+                                                <input class="form-control" id="orgname" type="text" placeholder="Name of Organization*" required data-validation-required-message="Please enter your full name.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <select class="form-control" id="etype">
-                                                    <option value="0">Type of Industry</option>
+                                                <select class="form-control" id="industry">
+                                                    <option value="" selected disabled>Type of Organization</option>
                                                     <option value="1">Agriculture</option>
                                                     <option value="2">Automotive</option>
                                                     <option value="3">Construction</option>
@@ -165,7 +179,11 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="eemail" type="email" placeholder="Email *" required data-validation-required-message="Please enter your email.">
+                                              <label class="radio-inline"><input type="radio" value="1" checked name="ctype">&nbsp;Profitable</label>
+                                              <label class="radio-inline"><input type="radio" value="2" name="ctype">&nbsp;Non-Profit</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" id="empemail" type="email" placeholder="Email *" required data-validation-required-message="Please enter your email.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
@@ -178,7 +196,7 @@
                                                 <div id="success"></div>
 
                                                 <button id="resetButton" class="btn btn-primary btn-xl text-uppercase" type="reset">Reset</button>
-                                                <button  class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitT(2);" >Register</button>
+                                                <button  class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitE();" >Register</button>
                                             </div>
                                         </div>
 

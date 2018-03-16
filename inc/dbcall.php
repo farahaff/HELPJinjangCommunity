@@ -104,7 +104,7 @@ class Db {
         //     //update seesion error msg
         //     return $error;
         // }
-        $sql = "select * from users WHERE username='$uname' LIMIT 1";
+        $sql = "select * from employer WHERE username='$uname' LIMIT 1";
         $result = $this->query($sql);
         //get teh single row
         $row = mysqli_fetch_assoc($result);

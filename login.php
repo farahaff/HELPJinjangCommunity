@@ -78,7 +78,7 @@ if (isset($_SESSION['name'])) {
                     }
                 }
                 ?>
-                <!-- if session has a msg  change later to signgel msg!-->
+                <!-- if session has a msg  change later to single msg!-->
                 <?php if (isset($_SESSION['logoutmsg'])): ?>
                     <div class="alert alert-success alert-dismissable">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -91,11 +91,11 @@ if (isset($_SESSION['name'])) {
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input class="form-control" name="uname" type="text" placeholder="Username *" required data-validation-required-message="Please enter your username.">
+                                        <input class="form-control" name="uname" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username.">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" name="pwd" type="password" placeholder="Password *" required data-validation-required-message="Please enter your password.">
+                                        <input class="form-control" name="pwd" type="password" placeholder="Password*" required data-validation-required-message="Please enter your password.">
                                         <p class="help-block text-danger"></p>
                                         <a href="signup.php" style="float:right;color: #b20000;">New user? Click here to sign up.</a><br>
                                     </div>

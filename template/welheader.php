@@ -44,7 +44,7 @@ unset($_SESSION["logoutmsg"]);
                 <div class="collapse navbar-collapse dropdown-content" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#about">Info</a>
+                            <a class="nav-link js-scroll-trigger" href="#info">Info</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

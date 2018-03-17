@@ -181,27 +181,32 @@ function recordReview(uniqueid, sessionID) {
 }
 
 // validate function for record Traning session
-function valideatRecordTraining() {
-    var mtitle = $("#title").val();// need to be string
-    if (!isNaN(mtitle)) {
-        $("#mtitle").text("Title should be a text!");
+function validateRecordTraining() {
+    var jtitle = $("#jobtitle").val();// need to be string
+    if (!isNaN(mjitle)) {
+        $("#jtitle").text("Title should be a text!");
     }else{
-        $("#mtitle").text("");
+        $("#jtitle").text("");
     }
-    var mdate = $("#date").val(); //need to be valid date
-    var mdatecheck = Date.parse(mdate);
-    if (!isNaN(mdatecheck) === false || mdate == " ") {
-        $("#mdate").text("Please enter a date!");
+    var jdescription = $("#jobdescription").val(); //need to be valid date
+    if (!isNaN(jdescription)) {
+        $("#jdescription").text("Please enter a description!");
     }else{
-        $("#mdate").text("");
+        $("#jdescription").text("");
     }
-    var mtime = $("#time").val(); // valide time
-    if (isNaN(mtime) == false || mtime == " ") {
-        $("#mtime").text("Please enter a time!");
+
+    var reqqualification = $("#reqqualification").val();// need to be string
+    if (!isNaN(reqqualification)) {
+        $("#reqqualification").text("Please enter required qualification!");
     }else{
-         $("#mtime").text("");
+        $("#reqqualification").text("");
     }
-    var mfee = $("#fee").val();//need to be a number
+    var reqskills = $("#reqskills").val(); //need to be valid date
+    if (!isNaN(reqskills)) {
+        $("#reqskills").text("Please enter required skills!");
+    }else{
+        $("#reqskills").text("");
+    }
 
 
 }

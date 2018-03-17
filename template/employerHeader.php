@@ -54,15 +54,15 @@ if (isset($_GET['logout'])) {
                             <a class="nav-link js-scroll-trigger" href="home.php">Home</a>
                         </li>
                         <?php // $_SESSION['usertype'];// USER TYpe = 1 member , 2= trainer     ?>
-
+                        <?php if ($_SESSION['usertype'] == 2): ?>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="postJob.php">Post Job Vacancy</a>
+                                <a class="nav-link js-scroll-trigger" href="recordSession.php">Record Session</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="viewHistoryTrainer.php">Manage Applications</a>
+                                <a class="nav-link js-scroll-trigger" href="viewHistoryTrainer.php">View Training History</a>
                             </li>
-
-                        <!-- if member show this
+                        <?php endif; ?>
+                        <!-- if member show this !-->
                         <?php if ($_SESSION['usertype'] == 1): ?>
                             <li class="nav-item">
                                 <a class="nav-link js-scroll-trigger" href="registerSession.php">Register Session</a>
@@ -71,7 +71,6 @@ if (isset($_GET['logout'])) {
                                 <a class="nav-link js-scroll-trigger" href="viewHistoryMember.php">View Training History</a>
                             </li>
                         <?php endif; ?>
-                      -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Profile

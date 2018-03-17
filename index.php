@@ -2,7 +2,7 @@
 
     <!-- About -->
     <section>
-      <div class="container" id="about">
+      <div class="container" id="info">
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Info</h2><br>

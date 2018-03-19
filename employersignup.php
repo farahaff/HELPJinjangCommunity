@@ -4,15 +4,15 @@
   // + '&tspecialty=' + tspecialty + '&utype=' + $usertype;
 $db = new Db();
 //get user submitted values
-$name = $_POST['username'];
-$pwd = $db->makepwd($_POST['pwd']);
-$orgname = $_POST['orgname'];
+$eUsername = $_POST['eUsername'];
+$ePassword = $db->makepwd($_POST['ePassword']);
+$orgName = $_POST['orgName'];
 $industry = $_POST['industry'];
-//$type = $_POST['type'];
-$empemail = $_POST['empemail'];
-$emobileno = $_POST['emobileno'];
+//$type = $_POST['profitability'];
+$empEmail = $_POST['empEmail'];
+$phoneNo = $_POST['phoneNo'];
 //end of member data
-$sql="INSERT INTO `employer` (`username`, `password`, `orgname`, `industry`, `email`, `mobileNo`)
-VALUES ('$name' ,'$pwd', '$orgname', '$industry', '$empemail', '$emobileno')";
+$sql="INSERT INTO `employer` (`username`, `password`, `orgName`, `industry`, `email`, `phoneNo`)
+VALUES ('$eUsername' ,'$ePassword', '$orgName', '$industry', '$empEmail', '$phoneNo')";
 
 $db->query($sql);

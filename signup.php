@@ -73,7 +73,7 @@
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" style="color:#b20000;" data-toggle="tab" href="#jobseeker" role="tab">Job Seeker</a>
+                        <a class="nav-link active" style="color:#b20000;" data-toggle="tab" href="#jobSeeker" role="tab">Job Seeker</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" style="color:#b20000;" data-toggle="tab" href="#employer" role="tab">Employer</a>
@@ -83,44 +83,53 @@
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div class="tab-pane active" id="jobseeker" role="tabpanel"><br/></br>
+                    <div class="tab-pane active" id="jobSeeker" role="tabpanel"><br/></br>
                         <div class="row">
                             <div class="col-lg-12 offset-md-3">
                                 <form id="contactForm" method="POST" novalidate>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input class="form-control"  id="jusername" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username.">
+                                                <input class="form-control"  id="username" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="jpassword" type="password" placeholder="Password*" required data-validation-required-message="Please enter your password.">
+                                                <input class="form-control" id="password" type="password" placeholder="Password*" required data-validation-required-message="Please enter your password.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="jfullname" type="text" placeholder="Full Name*" required data-validation-required-message="Please enter your full name.">
+                                                <input class="form-control" id="fullName" type="text" placeholder="Full Name*" required data-validation-required-message="Please enter your full name.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="jemail" type="email" placeholder="Email*" required data-validation-required-message="Please enter your email.">
+                                                <input class="form-control" id="email" type="email" placeholder="Email*" required data-validation-required-message="Please enter your email.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="jmobileno" type="text" placeholder="Mobile No*" required data-validation-required-message="Please enter your mobile number.">
+                                                <input class="form-control" id="mobileNo" type="text" placeholder="Mobile No*" required data-validation-required-message="Please enter your mobile number.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                              <textarea class="form-control" id="qualification" type="textarea" placeholder="Qualifications" required data-validation-required-message="Please enter your mobile number."></textarea>
+                                              <textarea class="form-control" id="qualifications" type="textarea" placeholder="Qualifications"></textarea>
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="form-control" id="skills" type="textarea" placeholder="List your skills" required data-validation-required-message="Please enter your mobile number."></textarea>
+                                                <textarea class="form-control" id="skills" type="textarea" placeholder="List Your skills"></textarea>
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                Availability: &nbsp <input id="starttime" type="time" placeholder="Start Time" required data-validation-required-message="Please enter your mobile number.">
-                                                &nbsp to &nbsp <input id="endtime" type="time" placeholder="End Time" required data-validation-required-message="Please enter your mobile number.">
+                                                Availability: &nbsp <input id="startTime" type="time" placeholder="Start Time">
+                                                &nbsp to &nbsp <input id="endTime" type="time" placeholder="End Time">
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <input class="form-control" id="preferredSalary" type="text" placeholder="Preferred Salary">
+                                                <p class="help-block text-danger"></p>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="healthConditions" type="textarea" placeholder="State Any Health Conditions"></textarea>
+                                                <p class="help-block text-danger"></p>
                                             </div>
                                             <br>
                                             <div class="form-group">
@@ -132,7 +141,7 @@
                                                 <br/>
                                                 <div id="success"></div>
                                                 <button id="resetButton" class="btn btn-primary btn-xl text-uppercase" type="reset">Reset</button>
-                                                <button   class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitJ();">Register</button>
+                                                <button   class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitJS();">Register</button>
                                             </div>
                                         </div>
                                     </div>
@@ -147,15 +156,15 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input class="form-control" id="eusername" type="text" placeholder="Username *" required data-validation-required-message="Please enter your username.">
+                                                <input class="form-control" id="eUsername" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="epassword" type="password" placeholder="Password *" required data-validation-required-message="Please enter your password.">
+                                                <input class="form-control" id="ePassword" type="password" placeholder="Password*" required data-validation-required-message="Please enter your password.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="orgname" type="text" placeholder="Name of Organization*" required data-validation-required-message="Please enter your full name.">
+                                                <input class="form-control" id="orgName" type="text" placeholder="Name of Organization*" required data-validation-required-message="Please enter your full name.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
@@ -183,11 +192,11 @@
                                               <label class="radio-inline"><input type="radio" value="2" name="ctype">&nbsp;Non-Profit</label>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="empemail" type="email" placeholder="Email *" required data-validation-required-message="Please enter your email.">
+                                                <input class="form-control" id="empEmail" type="email" placeholder="Email*" required data-validation-required-message="Please enter your email.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="emobileno" type="text" placeholder="Mobile No *" required data-validation-required-message="Please enter your mobile number.">
+                                                <input class="form-control" id="phoneNo" type="text" placeholder="Phone No*" required data-validation-required-message="Please enter your mobile number.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="clearfix"></div>

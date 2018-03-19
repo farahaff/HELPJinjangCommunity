@@ -106,13 +106,14 @@ class Db {
         // }
         $sql = "select * from jobSeeker WHERE username='$uname' LIMIT 1";
         $result = $this->query($sql);
+
         //get teh single row
         $row = mysqli_fetch_assoc($result);
-        if (mysqli_num_rows($result) > 0) {
-          $haspwd= password_hash($pwd, PASSWORD_BCRYPT);
-          echo $row['password']."  :".$haspwd;
 
-            if (password_verify(password_hash($pwd, PASSWORD_BCRYPT), $row['password'])) {
+        if (mysqli_num_rows($result) > 0) {
+
+
+            if (password_verify($pwd, $row['password'])) {
                 // store user name and user type in session
                 var_dump($row);
                 $_SESSION['name'] = $row['username'];
@@ -127,9 +128,14 @@ class Db {
                 return false;
             }
         } else {
+
             $sql = "select * from employer WHERE username='$uname' LIMIT 1";
             $result = $this->query($sql);
-            if (password_verify(password_hash($pwd, PASSWORD_BCRYPT), $row['password'])) {
+            //get teh single row
+            $row = mysqli_fetch_assoc($result);
+
+            if (password_verify($pwd, $row['password'])) {
+
                 // store user name and user type in session
                 $_SESSION['name'] = $row['username'];
                 //$_SESSION['usertype'] = $row['usertype']; // USER TYPE = 1 member , 2= trainer

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,7 +91,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input class="form-control"  id="username" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username." required>
+                                                <input class="form-control"  id="username" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
@@ -110,11 +111,11 @@
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                              <textarea class="form-control" id="qualifications" type="textarea" placeholder="Qualifications"></textarea>
+                                              <textarea class="form-control" id="qualifications" type="textarea" placeholder="Qualifications" required data-validation-required-message="Please enter your qualifications."></textarea>
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="form-control" id="skills" type="textarea" placeholder="List Your skills"></textarea>
+                                                <textarea class="form-control" id="skills" type="textarea" placeholder="List Your skills" required data-validation-required-message="Please list your skills."></textarea>
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <br>
@@ -160,15 +161,15 @@
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="ePassword" type="password" placeholder="Password*" required data-validation-required-message="Please enter your password.">
+                                                <input class="form-control" id="ePassword" type="password" placeholder="Password*" required data-validation-required-message="Please enter your password." required>
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="orgName" type="text" placeholder="Name of Organization*" required data-validation-required-message="Please enter your full name.">
+                                                <input class="form-control" id="orgName" type="text" placeholder="Name of Organization*" required data-validation-required-message="Please enter your full name." required>
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <select class="form-control" id="industry">
+                                                <select class="form-control" id="industry" required>
                                                     <option value="" selected disabled>Type of Organization</option>
                                                     <option value="1">Agriculture</option>
                                                     <option value="2">Automotive</option>

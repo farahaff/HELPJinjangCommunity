@@ -25,6 +25,47 @@ function formSubmitJS() {
     var preferredSalary = $("#preferredSalary").val();
     var healthConditions = $("#healthConditions").val();
 
+    if (username==""){
+      alert("Please enter your username");
+      return false;
+    }
+    else if (password==""){
+      alert("Please enter your password");
+      return false;
+    }
+    else if (fullName==""){
+      alert("Please enter your full name");
+      return false;
+    }
+    else if (email==""){
+      alert("Please enter your email");
+      return false;
+    }
+    else if (mobileNo==""){
+      alert("Please enter your mobile no");
+      return false;
+    }
+    else if (qualifications==""){
+      alert("Please enter your qualifications");
+      return false;
+    }
+    else if (skills==""){
+      alert("Please enter your skills");
+      return false;
+    }
+    else if (startTime==""){
+      alert("Please enter your preferred time");
+      return false;
+    }
+    else if (endTime==""){
+      alert("Please enter your preferred time");
+      return false;
+    }
+
+
+
+
+
     var dataString = '&username=' + username + '&password=' + password + '&fullName=' + fullName + '&email=' + email + '&mobileNo=' + mobileNo + '&qualifications=' + qualifications + '&skills=' + skills + '&startTime=' + startTime + '&endTime=' + endTime + '&preferredSalary=' + preferredSalary + '&healthConditions=' + healthConditions;
     $.ajax({
         type: "POST",
@@ -50,6 +91,31 @@ function formSubmitE() {
     //var type = $("#type").val();
     var empEmail = $("#empEmail").val();
     var phoneNo = $("#phoneNo").val();
+
+    if (eUsername==""){
+      alert("Please enter your username");
+      return false;
+    }
+    else if (ePassword==""){
+      alert("Please enter your password");
+      return false;
+    }
+    else if (orgName==""){
+      alert("Please enter your organization name");
+      return false;
+    }
+    else if (industry==""){
+      alert("Please select type of organization");
+      return false;
+    }
+    else if (empEmail==""){
+      alert("Please enter your email");
+      return false;
+    }
+    else if (phoneNo==""){
+      alert("Please enter your phone number");
+      return false;
+    }
 
     var dataString = '&eUsername=' + eUsername + '&ePassword=' + ePassword + '&orgName=' + orgName + '&industry=' + industry + '&empEmail=' + empEmail + '&phoneNo=' + phoneNo;
     $.ajax({

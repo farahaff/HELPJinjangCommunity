@@ -91,11 +91,11 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input class="form-control"  id="musername" type="text" placeholder="Username *" required data-validation-required-message="Please enter your username.">
+                                                <input class="form-control"  id="musername" type="text" placeholder="Username *" onblur="valideatRecordTraining()" required data-validation-required-message="Please enter your username.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="mpassword" type="password" placeholder="Password *" required data-validation-required-message="Please enter your password.">
+                                                <input class="form-control" id="mpassword" type="password" placeholder="Password *" onblur="valideatRecordTraining()" required data-validation-required-message="Please enter your password.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">

@@ -183,8 +183,9 @@ function recordReview(uniqueid, sessionID) {
 
 // validate function for record Traning session
 function validateRecordTraining() {
-    var jtitle = $("#jobtitle").val();// need to be string
-    if (!isNaN(mjitle)) {
+    alert("alert");
+    var jtitle = $("#username").val();// need to be string
+    if (!isNaN(jtitle)) {
         $("#jtitle").text("Title should be a text!");
     }else{
         $("#jtitle").text("");

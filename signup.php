@@ -90,8 +90,8 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input class="form-control"  id="username" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username." required>
-                                                <p class="help-block text-danger"></p>
+                                                <input class="form-control"  id="username" type="text" placeholder="Username*" onclick="validateRecordTraining()"  data-validation-required-message="Please enter your username." required>
+                                                <p class="help-block text-danger" style="color: red;" id="jtitle"></p>
                                             </div>
                                             <div class="form-group">
                                                 <input class="form-control" id="password" type="password" placeholder="Password*" required data-validation-required-message="Please enter your password.">

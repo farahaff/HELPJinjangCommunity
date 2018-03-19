@@ -13,14 +13,14 @@ class Db {
     const HOST = 'localhost';
     const USERNAME = 'root';
     const PWD = '';
-    const DBNAME = 'jinjang';
+    const DBNAME = 'helpfit';
 
     protected static $connection;
     public $error = array("msg" => null);
     private $last_id = 0;
 
     /*
-     * Call connect method, at the initialization for the class, so db connection made automatically
+     * Call connect method ,at the initialization fo the class,so db connection made automatically
      * when we include this file
      */
 
@@ -104,42 +104,28 @@ class Db {
         //     //update seesion error msg
         //     return $error;
         // }
-        $sql = "select * from jobSeeker WHERE username='$uname' LIMIT 1";
+        $sql = "select * from users WHERE username='$uname' LIMIT 1";
         $result = $this->query($sql);
         //get teh single row
         $row = mysqli_fetch_assoc($result);
         if (mysqli_num_rows($result) > 0) {
-          $haspwd= password_hash($pwd, PASSWORD_BCRYPT);
-          echo $row['password']."  :".$haspwd;
-
-            if (password_verify(password_hash($pwd, PASSWORD_BCRYPT), $row['password'])) {
+            if (password_verify($pwd, $row['password'])) {
                 // store user name and user type in session
-                var_dump($row);
                 $_SESSION['name'] = $row['username'];
-                //$_SESSION['usertype'] = $row['usertype']; // USER TYPE = 1 member , 2= trainer
-                $_SESSION['msd'] = "Successfully Logged In";
-                $_SESSION['uniqueID'] = $row['userID'];
+                $_SESSION['usertype'] = $row['usertype']; // USER TYpe = 1 member , 2= trainer
+                $_SESSION['msd'] = "Succefully Logged In";
+                $_SESSION['uniqueID'] = $row['idusers'];
                 $this->setMsg("Login successful!");
-
                 return true;
             } else {
-                $this->setMsg("The password or username is incorrect.");
+                $this->setMsg("Either the password or username does not match!");
                 return false;
             }
         } else {
-            $sql = "select * from employer WHERE username='$uname' LIMIT 1";
-            $result = $this->query($sql);
-            if (password_verify(password_hash($pwd, PASSWORD_BCRYPT), $row['password'])) {
-                // store user name and user type in session
-                $_SESSION['name'] = $row['username'];
-                //$_SESSION['usertype'] = $row['usertype']; // USER TYPE = 1 member , 2= trainer
-                $_SESSION['msd'] = "Successfully Logged In";
-                $_SESSION['uniqueID'] = $row['userID'];
-                $this->setMsg("Login successful!");
-                return true;
+            $this->setMsg("Either the password or username does not match!");
+            return false;
         }
     }
-  }
 
     /*
      *  redirect user to a page

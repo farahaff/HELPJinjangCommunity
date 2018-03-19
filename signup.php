@@ -90,7 +90,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input class="form-control"  id="username" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username.">
+                                                <input class="form-control"  id="username" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username." required>
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
@@ -152,11 +152,11 @@
                     <div class="tab-pane" id="employer" role="tabpanel"><br/></br>
                         <div class="row">
                             <div class="col-lg-12 offset-md-3">
-                                <form id="contactForm"  action="#" novalidate method="POST">
+                                <form id="contactForm"  action="#"  method="POST">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input class="form-control" id="eUsername" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username.">
+                                                <input class="form-control" id="eUsername" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username." required>
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">

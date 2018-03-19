@@ -189,7 +189,7 @@
                                             </div>
                                             <div class="form-group">
                                               <label class="radio-inline"><input type="radio" value="1" checked name="ctype">&nbsp;Profitable</label>
-                                              <label class="radio-inline"><input type="radio" value="2" name="ctype">&nbsp;Non-Profit</label>
+                                              <label class="radio-inline"><input type="radio" value="2" name="ctype">&nbsp;Non-Profitable</label>
                                             </div>
                                             <div class="form-group">
                                                 <input class="form-control" id="empEmail" type="email" placeholder="Email*" required data-validation-required-message="Please enter your email.">
@@ -205,7 +205,7 @@
                                                 <div id="success"></div>
 
                                                 <button id="resetButton" class="btn btn-primary btn-xl text-uppercase" type="reset">Reset</button>
-                                                <button  class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitE();" >Register</button>
+                                                <button  class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitE();">Register</button>
                                             </div>
                                         </div>
 

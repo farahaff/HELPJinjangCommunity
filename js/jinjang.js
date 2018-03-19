@@ -11,22 +11,24 @@ function showID() {
 }
 
 //job seeker registration
-function formSubmitJ() {
+function formSubmitJS() {
     //var name = document.getElementById("name").value;
-    var jusername = $("#jusername").val();
-    var pwd = $("#jpassword").val();
-    var fname = $("#jfullname").val();
-    var jemail = $("#jemail").val();
-    var jmobileno = $("#jmobileno").val();
-    var qualification = $("#qualification").val();
+    var username = $("#username").val();
+    var password = $("#password").val();
+    var fullName = $("#fullName").val();
+    var email = $("#email").val();
+    var mobileNo = $("#mobileNo").val();
+    var qualifications = $("#qualifications").val();
     var skills = $("#skills").val();
-    var starttime = $("#starttime").val();
-    var endtime = $("#endtime").val();
+    var startTime = $("#startTime").val();
+    var endTime = $("#endTime").val();
+    var preferredSalary = $("#preferredSalary").val();
+    var healthConditions = $("#healthConditions").val();
 
-    var dataString = '&username=' + jusername + '&pwd=' + pwd + '&fname=' + fname + '&jemail=' + jemail + '&jmobileno=' + jmobileno + '&qualification=' + qualification + '&skills=' + skills + '&starttime=' + starttime + '&endtime=' + endtime;
+    var dataString = '&username=' + username + '&password=' + password + '&fullName=' + fullName + '&email=' + email + '&mobileNo=' + mobileNo + '&qualifications=' + qualifications + '&skills=' + skills + '&startTime=' + startTime + '&endTime=' + endTime + '&preferredSalary=' + preferredSalary + '&healthConditions=' + healthConditions;
     $.ajax({
         type: "POST",
-        url: "jobseekersignup.php",
+        url: "jobSeekerSignup.php",
         data: dataString,
         success: function (response) {
             //after success display the msg
@@ -40,20 +42,19 @@ function formSubmitJ() {
 }
 //employer registration
 function formSubmitE() {
-
     //var name = document.getElementById("name").value;
-    var name = $("#eusername").val();
-    var pwd = $("#epassword").val();
-    var orgname = $("#orgname").val();
+    var eUsername = $("#eUsername").val();
+    var ePassword = $("#ePassword").val();
+    var orgName = $("#orgName").val();
     var industry = $("#industry").val();
     //var type = $("#type").val();
-    var empemail = $("#empemail").val();
-    var emobileno = $("#emobileno").val();
+    var empEmail = $("#empEmail").val();
+    var phoneNo = $("#phoneNo").val();
 
-    var dataString = '&username=' + name + '&pwd=' + pwd + '&orgname=' + orgname + '&industry=' + industry + '&empemail=' + empemail + '&emobileno=' + emobileno;
+    var dataString = '&eUsername=' + eUsername + '&ePassword=' + ePassword + '&orgName=' + orgName + '&industry=' + industry + '&empEmail=' + empEmail + '&phoneNo=' + phoneNo;
     $.ajax({
         type: "POST",
-        url: "employersignup.php",
+        url: "employerSignup.php",
         data: dataString,
         success: function (response) {
             //after success display teh msg

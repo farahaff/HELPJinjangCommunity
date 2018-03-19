@@ -104,7 +104,7 @@ class Db {
         //     //update seesion error msg
         //     return $error;
         // }
-        $sql = "select * from employer WHERE username='$uname' LIMIT 1";
+        $sql = "select * from jobSeeker WHERE username='$uname' LIMIT 1";
         $result = $this->query($sql);
         //get teh single row
         $row = mysqli_fetch_assoc($result);
@@ -112,17 +112,17 @@ class Db {
             if (password_verify($pwd, $row['password'])) {
                 // store user name and user type in session
                 $_SESSION['name'] = $row['username'];
-                $_SESSION['usertype'] = $row['usertype']; // USER TYpe = 1 member , 2= trainer
+                //$_SESSION['usertype'] = $row['usertype']; // USER TYPE = 1 member , 2= trainer
                 $_SESSION['msd'] = "Successfully Logged In";
-                $_SESSION['uniqueID'] = $row['idusers'];
+                $_SESSION['uniqueID'] = $row['userID'];
                 $this->setMsg("Login successful!");
                 return true;
             } else {
-                $this->setMsg("Either the password or username does not match!");
+                $this->setMsg("The password or username is incorrect.");
                 return false;
             }
         } else {
-            $this->setMsg("Either the password or username does not match!");
+            $this->setMsg("There are no users.");
             return false;
         }
     }

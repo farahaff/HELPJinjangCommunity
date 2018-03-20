@@ -25,47 +25,6 @@ function formSubmitJS() {
     var preferredSalary = $("#preferredSalary").val();
     var healthConditions = $("#healthConditions").val();
 
-    if (username==""){
-      alert("Please enter your username");
-      return false;
-    }
-    else if (password==""){
-      alert("Please enter your password");
-      return false;
-    }
-    else if (fullName==""){
-      alert("Please enter your full name");
-      return false;
-    }
-    else if (email==""){
-      alert("Please enter your email");
-      return false;
-    }
-    else if (mobileNo==""){
-      alert("Please enter your mobile no");
-      return false;
-    }
-    else if (qualifications==""){
-      alert("Please enter your qualifications");
-      return false;
-    }
-    else if (skills==""){
-      alert("Please enter your skills");
-      return false;
-    }
-    else if (startTime==""){
-      alert("Please enter your preferred time");
-      return false;
-    }
-    else if (endTime==""){
-      alert("Please enter your preferred time");
-      return false;
-    }
-
-
-
-
-
     var dataString = '&username=' + username + '&password=' + password + '&fullName=' + fullName + '&email=' + email + '&mobileNo=' + mobileNo + '&qualifications=' + qualifications + '&skills=' + skills + '&startTime=' + startTime + '&endTime=' + endTime + '&preferredSalary=' + preferredSalary + '&healthConditions=' + healthConditions;
     $.ajax({
         type: "POST",
@@ -88,36 +47,11 @@ function formSubmitE() {
     var ePassword = $("#ePassword").val();
     var orgName = $("#orgName").val();
     var industry = $("#industry").val();
-    //var type = $("#type").val();
+    var ctype = $("#ctype").val();
     var empEmail = $("#empEmail").val();
     var phoneNo = $("#phoneNo").val();
-
-    if (eUsername==""){
-      alert("Please enter your username");
-      return false;
-    }
-    else if (ePassword==""){
-      alert("Please enter your password");
-      return false;
-    }
-    else if (orgName==""){
-      alert("Please enter your organization name");
-      return false;
-    }
-    else if (industry==""){
-      alert("Please select type of organization");
-      return false;
-    }
-    else if (empEmail==""){
-      alert("Please enter your email");
-      return false;
-    }
-    else if (phoneNo==""){
-      alert("Please enter your phone number");
-      return false;
-    }
-
-    var dataString = '&eUsername=' + eUsername + '&ePassword=' + ePassword + '&orgName=' + orgName + '&industry=' + industry + '&empEmail=' + empEmail + '&phoneNo=' + phoneNo;
+    alert(ctype);
+    var dataString = '&eUsername=' + eUsername + '&ePassword=' + ePassword + '&orgName=' + orgName + '&industry=' + industry + '&empEmail=' + empEmail + '&phoneNo=' + phoneNo + '&ctype=' + ctype;
     $.ajax({
         type: "POST",
         url: "employerSignup.php",
@@ -133,6 +67,15 @@ function formSubmitE() {
 
 }
 
+function test() {
+    var username = $("#username").val();// need to be string
+    alert("Title");
+    if (!isNaN(username)) {
+        $("#username").text("Title should be a text!");
+    } else {
+        $("#jtitle").text("");
+    }
+}
 /*
  * function to togle  the personal and group option
  *
@@ -249,31 +192,40 @@ function recordReview(uniqueid, sessionID) {
 
 // validate function for record Traning session
 function validateRecordTraining() {
-    alert("alert");
-    var jtitle = $("#username").val();// need to be string
-    if (!isNaN(jtitle)) {
-        $("#jtitle").text("Title should be a text!");
-    }else{
+    var username = $("#username").val();// need to be string
+    if (!isNaN(username)) {
+        alert("Title should be a text!");
+        $("#username").text("Title should be a text!");
+    } else {
         $("#jtitle").text("");
     }
-    var jdescription = $("#jobdescription").val(); //need to be valid date
-    if (!isNaN(jdescription)) {
-        $("#jdescription").text("Please enter a description!");
-    }else{
+
+    var jobtitle = $("#jobtitle").val(); //need to be valid date
+    if (!isNaN(jobtitle)) {
+        $("#jtitle").text("Please enter the job title!");
+    } else {
+        $("#jtitle").text("");
+    }
+
+    var jobdescription = $("#jobdescription").val(); //need to be valid date
+    if (!isNaN(jobdescription)) {
+        $("#jdescription").text("Please enter the job description!");
+    } else {
         $("#jdescription").text("");
     }
 
     var reqqualification = $("#reqqualification").val();// need to be string
     if (!isNaN(reqqualification)) {
-        $("#reqqualification").text("Please enter required qualification!");
-    }else{
-        $("#reqqualification").text("");
+        $("#rqualification").text("Please enter required qualification!");
+    } else {
+        $("#rqualification").text("");
     }
+
     var reqskills = $("#reqskills").val(); //need to be valid date
     if (!isNaN(reqskills)) {
-        $("#reqskills").text("Please enter required skills!");
-    }else{
-        $("#reqskills").text("");
+        $("#rskills").text("Please enter required skills!");
+    } else {
+        $("#rskills").text("");
     }
 
 

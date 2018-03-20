@@ -8,11 +8,14 @@ $eUsername = $_POST['eUsername'];
 $ePassword = $db->makepwd($_POST['ePassword']);
 $orgName = $_POST['orgName'];
 $industry = $_POST['industry'];
-//$type = $_POST['profitability'];
+$type = $_POST['ctype'];//profitability
 $empEmail = $_POST['empEmail'];
 $phoneNo = $_POST['phoneNo'];
 //end of member data
-$sql="INSERT INTO `employer` (`username`, `password`, `orgName`, `industry`, `email`, `phoneNo`)
-VALUES ('$eUsername' ,'$ePassword', '$orgName', '$industry', '$empEmail', '$phoneNo')";
+//$sql="INSERT INTO `employer` (`username`, `password`, `orgName`, `industry`,`profitability`, `email`, `phoneNo`)
+//VALUES ('$eUsername' ,'$ePassword', '$orgName', '$industry','$type' '$empEmail', '$phoneNo')";
+
+$sql ="INSERT INTO `employer` ( `username`, `password`, `orgName`, `industry`, `profitability`, `email`, `phoneNo`) "
+        . "VALUES ('$eUsername', '$ePassword', '$orgName', '$industry', '$type', '$empEmail', '$phoneNo')";
 
 $db->query($sql);

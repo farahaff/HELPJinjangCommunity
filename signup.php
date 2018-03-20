@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,13 +90,8 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-<<<<<<< HEAD
-                                                <input class="form-control"  id="username" type="text" placeholder="Username*" onclick="validateRecordTraining()"  data-validation-required-message="Please enter your username." required>
-                                                <p class="help-block text-danger" style="color: red;" id="jtitle"></p>
-=======
-                                                <input class="form-control"  id="username" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username.">
-                                                <p class="help-block text-danger"></p>
->>>>>>> b56d972be80243a53ec21ec609ee736c842995bc
+                                                <input class="form-control"  id="username" type="text" onblur="validateRecordTraining()" placeholder="Username*" required data-validation-required-message="Please enter your username." required>
+                                                <p class="text-danger" style="color: red;" id="username"></p>
                                             </div>
                                             <div class="form-group">
                                                 <input class="form-control" id="password" type="password" placeholder="Password*" required data-validation-required-message="Please enter your password.">
@@ -116,11 +110,11 @@
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                              <textarea class="form-control" id="qualifications" type="textarea" placeholder="Qualifications" required data-validation-required-message="Please enter your qualifications."></textarea>
+                                              <textarea class="form-control" id="qualifications" type="textarea" placeholder="Qualifications"></textarea>
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="form-control" id="skills" type="textarea" placeholder="List Your skills" required data-validation-required-message="Please list your skills."></textarea>
+                                                <textarea class="form-control" id="skills" type="textarea" placeholder="List Your skills"></textarea>
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <br>
@@ -166,18 +160,18 @@
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="ePassword" type="password" placeholder="Password*" required data-validation-required-message="Please enter your password." required>
+                                                <input class="form-control" id="ePassword" type="password" placeholder="Password*" required data-validation-required-message="Please enter your password.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="orgName" type="text" placeholder="Name of Organization*" required data-validation-required-message="Please enter your full name." required>
+                                                <input class="form-control" id="orgName" type="text" placeholder="Name of Organization*" required data-validation-required-message="Please enter your full name.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <select class="form-control" id="industry" required>
+                                                <select class="form-control" id="industry">
                                                     <option value="" selected disabled>Type of Organization</option>
-                                                    <option value="1">Agriculture</option>
-                                                    <option value="2">Automotive</option>
+                                                    <option value="Agriculture">Agriculture</option>
+                                                    <option value="Automotive">Automotive</option>
                                                     <option value="3">Construction</option>
                                                     <option value="4">Cosmetics</option>
                                                     <option value="5">Education</option>
@@ -194,8 +188,8 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                              <label class="radio-inline"><input type="radio" value="1" checked name="ctype">&nbsp;Profitable</label>
-                                              <label class="radio-inline"><input type="radio" value="2" name="ctype">&nbsp;Non-Profitable</label>
+                                                <label class="radio-inline"><input type="radio" id="ctype" onclick="test();" value="Profitable" checked name="ctype">&nbsp;Profitable</label>
+                                              <label class="radio-inline"><input type="radio" id="ctype" value="2" name="ctype">&nbsp;Non-Profit</label>
                                             </div>
                                             <div class="form-group">
                                                 <input class="form-control" id="empEmail" type="email" placeholder="Email*" required data-validation-required-message="Please enter your email.">
@@ -211,7 +205,7 @@
                                                 <div id="success"></div>
 
                                                 <button id="resetButton" class="btn btn-primary btn-xl text-uppercase" type="reset">Reset</button>
-                                                <button  class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitE();">Register</button>
+                                                <button  class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitE();" >Register</button>
                                             </div>
                                         </div>
 

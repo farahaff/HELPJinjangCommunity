@@ -96,56 +96,47 @@ class Db {
     /*
      *  Authentication function
      *  Based on the username and password supllied authneticate the user
+     * change for hassan type of user
      */
 
     public function authenticate($uname, $pwd) {
-
-        // if(!$this->validate($uname,$pwd)){
-        //     //update seesion error msg
-        //     return $error;
-        // }
-        $sql = "select * from jobSeeker WHERE username='$uname' LIMIT 1";
-        $result = $this->query($sql);
-
-        //get teh single row
-        $row = mysqli_fetch_assoc($result);
-
-        if (mysqli_num_rows($result) > 0) {
-
-
-            if (password_verify($pwd, $row['password'])) {
-                // store user name and user type in session
-                var_dump($row);
-                $_SESSION['name'] = $row['username'];
-                //$_SESSION['usertype'] = $row['usertype']; // USER TYPE = 1 member , 2= trainer
-                $_SESSION['msd'] = "Successfully Logged In";
-                $_SESSION['uniqueID'] = $row['userID'];
-                $this->setMsg("Login successful!");
-
-                return true;
-            } else {
-                $this->setMsg("The password or username is incorrect.");
-                return false;
-            }
-        } else {
-
-            $sql = "select * from employer WHERE username='$uname' LIMIT 1";
+            $sql = "SELECT * from jobSeeker WHERE username='$uname' LIMIT 1";
             $result = $this->query($sql);
-            //get teh single row
             $row = mysqli_fetch_assoc($result);
-
-            if (password_verify($pwd, $row['password'])) {
-
-                // store user name and user type in session
-                $_SESSION['name'] = $row['username'];
-                //$_SESSION['usertype'] = $row['usertype']; // USER TYPE = 1 member , 2= trainer
-                $_SESSION['msd'] = "Successfully Logged In";
-                $_SESSION['uniqueID'] = $row['userID'];
-                $this->setMsg("Login successful!");
-                return true;
-        }
+            if (mysqli_num_rows($result) > 0) {
+                if (password_verify($pwd, $row['password'])) {
+                    // store user name and user type in session
+                    $_SESSION['name'] = $row['username'];
+                    $_SESSION['msd'] = "Successfully Logged In";
+                    $_SESSION['uniqueID'] = $row['userID'];
+                    $this->setMsg("Login successful!");
+                    return true;
+                } else {
+                    $this->setMsg("The username or password is incorrect.");
+                    return false;
+                }
+            } else {
+                $this->setMsg("User not found!");
+            }
+            $sql = "SELECT * from employer WHERE username='$uname' LIMIT 1";
+            $result = $this->query($sql);
+            $row = mysqli_fetch_assoc($result);
+            if (mysqli_num_rows($result) > 0) {
+                if (password_verify($pwd, $row['password'])) {
+                    // store user name and user type in session
+                    $_SESSION['name'] = $row['username'];
+                    $_SESSION['msd'] = "Successfully Logged In";
+                    $_SESSION['uniqueID'] = $row['userID'];
+                    $this->setMsg("Login successful!");
+                    return true;
+                } else {
+                    $this->setMsg("The username or password is incorrect.");
+                    return false;
+                }
+            } else {
+                $this->setMsg("User not found!");
+            }
     }
-  }
 
     /*
      *  redirect user to a page

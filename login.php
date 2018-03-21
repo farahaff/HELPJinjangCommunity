@@ -68,7 +68,8 @@ if (isset($_SESSION['name'])) {
                 </div>
                 <?php
                 if (isset($_POST['login'])) {
-                    if ($db->authenticate($_POST['uname'], $_POST['pwd'])) {
+                    if ($_POST['uname']!=""&&$_POST['pwd']!=""){
+                    if ($db->authenticate($_POST['uname'], $_POST['pwd'], "")) {
                         $db->redirect('home.php');
                     } else {
                         echo "<div class='row alert alert-success' >
@@ -76,7 +77,12 @@ if (isset($_SESSION['name'])) {
                         . $_SESSION['msg'] .
                         "</div></div>";
                     }
+                } else {
+                        echo "<div class='row alert alert-success' >
+                    <div class='col-lg-12'>Username or password cannot be empty</div></div>";
+                    }
                 }
+                
                 ?>
                 <!-- if session has a msg  change later to single msg!-->
                 <?php if (isset($_SESSION['logoutmsg'])): ?>

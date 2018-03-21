@@ -1,5 +1,5 @@
 <?php require_once './template/header.php'; ?>
- 
+
 <!--- Google charts -->
 <!-- Aboutsomething -->
 <section>

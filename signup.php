@@ -85,9 +85,9 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="jobSeeker" role="tabpanel"><br/></br>
                         <div class="row">
-                            <div class="col-lg-12 offset-md-3">
+                            <div class="col-lg-12">
                                 <form id="contactForm" method="POST" novalidate>
-                                    <div class="row">
+                                    <div class="row text-center">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <input class="form-control"  id="username" type="text" onblur="validateRecordTraining()" placeholder="Username*" required data-validation-required-message="Please enter your username." required>
@@ -106,25 +106,26 @@
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="mobileNo" type="text" placeholder="Mobile No*" required data-validation-required-message="Please enter your mobile number.">
+                                                <input class="form-control" id="mobileNo" type="number" placeholder="Mobile No*" required data-validation-required-message="Please enter your mobile number.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
                                               <textarea class="form-control" id="qualifications" type="textarea" placeholder="Qualifications"></textarea>
                                                 <p class="help-block text-danger"></p>
                                             </div>
+                                            <br>
+                                          </div>
+                                          <div class="col-md-6">
                                             <div class="form-group">
                                                 <textarea class="form-control" id="skills" type="textarea" placeholder="List Your skills"></textarea>
                                                 <p class="help-block text-danger"></p>
                                             </div>
-                                            <br>
                                             <div class="form-group">
                                                 Availability: &nbsp <input id="startTime" type="time" placeholder="Start Time">
                                                 &nbsp to &nbsp <input id="endTime" type="time" placeholder="End Time">
                                             </div>
-                                            <br>
                                             <div class="form-group">
-                                                <input class="form-control" id="preferredSalary" type="text" placeholder="Preferred Salary">
+                                                <input class="form-control" id="preferredSalary" type="number" placeholder="Preferred Salary">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
@@ -137,12 +138,12 @@
                                                 <input type="file" name="fileToUpload">
                                             </div>
                                             <div class="clearfix"></div>
-                                            <div class="col-lg-12 text-center">
-                                                <br/>
-                                                <div id="success"></div>
-                                                <button id="resetButton" class="btn btn-primary btn-xl text-uppercase" type="reset">Reset</button>
-                                                <button   class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitJS();">Register</button>
-                                            </div>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <br/>
+                                            <div id="success"></div>
+                                            <button id="resetButton" class="btn btn-primary btn-xl text-uppercase" type="reset">Reset</button>
+                                            <button   class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitJS();">Register</button>
                                         </div>
                                     </div>
                                 </form>
@@ -196,7 +197,7 @@
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="phoneNo" type="text" placeholder="Phone No*" required data-validation-required-message="Please enter your mobile number.">
+                                                <input class="form-control" id="phoneNo" type="number" placeholder="Phone No*" required data-validation-required-message="Please enter your mobile number.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="clearfix"></div>

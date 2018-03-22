@@ -191,42 +191,84 @@ function recordReview(uniqueid, sessionID) {
 }
 
 // validate function for record Traning session
-function validateRecordTraining() {
-    var username = $("#username").val();// need to be string
-    if (!isNaN(username)) {
-        alert("Title should be a text!");
-        $("#username").text("Title should be a text!");
-    } else {
-        $("#jtitle").text("");
-    }
+function validateJobTitle() {
 
     var jobtitle = $("#jobtitle").val(); //need to be valid date
     if (!isNaN(jobtitle)) {
-        $("#jtitle").text("Please enter the job title!");
+        $("#jtitle").text("Please enter the job title.");
     } else {
         $("#jtitle").text("");
     }
+}
+
+function validateJobDescription() {
+
 
     var jobdescription = $("#jobdescription").val(); //need to be valid date
     if (!isNaN(jobdescription)) {
-        $("#jdescription").text("Please enter the job description!");
+        $("#jdescription").text("Please enter the job description.");
     } else {
         $("#jdescription").text("");
     }
+}
+
+function validateJobQualification() {
 
     var reqqualification = $("#reqqualification").val();// need to be string
     if (!isNaN(reqqualification)) {
-        $("#rqualification").text("Please enter required qualification!");
+        $("#rqualification").text("Please enter the required qualifications.");
     } else {
         $("#rqualification").text("");
     }
+}
 
+function validateJobSkills() {
     var reqskills = $("#reqskills").val(); //need to be valid date
     if (!isNaN(reqskills)) {
-        $("#rskills").text("Please enter required skills!");
+        $("#rskills").text("Please enter the required skills.");
     } else {
         $("#rskills").text("");
     }
+}
 
+function validateJobTimings() {
+    var startTime = $("#starttime").val(); //need to be valid date
+    if (!isNaN(startTime)) {
+        $("#sTime").text("Please enter the job timings.");
+    } else {
+        $("#sTime").text("");
+    }
+    var endTime = $("#endtime").val(); //need to be valid date
+    if (!isNaN(endTime)) {
+        $("#sTime").text("Please enter the job timings.");
+    } else {
+        $("#sTime").text("");
+    }
+}
 
+function validateJobAddress() {
+    var address = $("#address").val(); //need to be valid date
+    if (!isNaN(address)) {
+        $("#jaddress").text("Please enter the job address.");
+    } else {
+        $("#jaddress").text("");
+    }
+}
+
+function validateJobSalary() {
+    var salary = $("#salary").val(); //need to be valid date
+    if (!isNaN(salary)) {
+        $("#jsalary").text("Please enter the job salary.");
+    } else {
+        $("#jsalary").text("");
+    }
+}
+
+function validateJobPreferences() {
+    var preferences = $("#preferences").val(); //need to be valid date
+    if (!isNaN(preferences)) {
+        $("#jpreferences").text("Please enter any job preferences.");
+    } else {
+        $("#jpreferences").text("");
+    }
 }

@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Post Job Vacancy</h2><br/>
+                <h2 class="section-heading text-uppercase">Post Job Vacancy</h2>
             </div>
         </div>
         <?php
@@ -17,60 +17,70 @@
                 //<strong>Warning!</strong> Please fill all the fields!
             //</div>';
             //} else {
+            if ($_POST['jobtitle']!=""&&$_POST['jobdescription']!=""){
+
                     $sql = "INSERT INTO `jobposting` (`jobtitle`, `jobdescription`,`reqQualifications`, `reqskills`, `starttime`, `endtime`, `address`, `salary`, `preferences`, `createdby`)
                                     VALUES ('{$_POST['jobtitle']}', '{$_POST['jobdescription']}','{$_POST['reqqualification']}', '{$_POST['reqskills']}',  '{$_POST['starttime']}', '{$_POST['endtime']}',
                                       '{$_POST['address']}','{$_POST['salary']}','{$_POST['preferences']}',{$_SESSION['uniqueID']})";
 
-
-                                      echo $sql;
-
                 if (($db->query($sql))) {
                     echo '<div class="alert alert-success">
-                <strong>Success!</strong> Data has been saved to the database!
+                <strong>Success!</strong> Job Posting Saved.
             </div>';
+
                 }
               //}
             }
+
+
+          else {
+                  echo "<div class='row alert alert-success' >
+              <div class='col-lg-12'>Please fill out the mandatory fields.</div></div>";
+              }
+
+          }
         ?>
+
         <!-- Tab panes -->
         <div class="tab-content">
             <div class="tab-pane active" id="member" role="tabpanel"><br/></br>
                 <div class="row">
                     <div class="col-lg-12 offset-md-3">
-                        <form  name="recordt" id="member" method="POST" action="#" novalidate>
+                        <form  name="recordt" id="member" method="POST" action="#" novalidate >
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input class="form-control" id="jobtitle" name="jobtitle" type="text"  onblur="validateRecordTraining()"  value="" placeholder="Job Title*" required></input>
+                                        <input class="form-control" id="jobtitle" name="jobtitle" type="text"  onblur="validateJobTitle()"  value="" placeholder="Job Title*" required></input>
                                         <p class="text-danger" id="jtitle"></p>
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" id="jobdescription" name="jobdescription" type="textarea" placeholder="Job Description*" onblur="validateRecordTraining()"   required value=""></textarea>
+                                        <textarea class="form-control" id="jobdescription" name="jobdescription" type="textarea" placeholder="Job Description*" onblur="validateJobDescription()"   required value=""></textarea>
                                         <p class="help-block text-danger" id="jdescription"></p>
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" id="reqqualification" name="reqqualification" type="textarea" placeholder="Required Qualifications*" onblur="validateRecordTraining()"  required value=""></textarea>
+                                        <textarea class="form-control" id="reqqualification" name="reqqualification" type="textarea" placeholder="Required Qualifications*" onblur="validateJobQualification()"  required value=""></textarea>
                                         <p class="help-block text-danger" id="rqualification" ></p>
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" id="reqskills" name="reqskills" type="textarea" placeholder="Required Skills*"  onblur="validateRecordTraining()" required value=""></textarea>
+                                        <textarea class="form-control" id="reqskills" name="reqskills" type="textarea" placeholder="Required Skills*"  onblur="validateJobSkills()" required value=""></textarea>
                                         <p class="help-block text-danger" id="rskills"></p>
                                     </div>
                                     <div class="form-group">
-                                      Job Timings: &nbsp <input id="starttime" name="starttime" type="time" placeholder="Start Time*" required data-validation-required-message="Please enter your mobile number.">
-                                      &nbsp to &nbsp <input id="endtime" name="endtime" type="time" placeholder="End Time*" required data-validation-required-message="Please enter your mobile number.">
+                                      Job Timings: &nbsp <input id="starttime" name="starttime" type="time" placeholder="Start Time*" required onblur="validateJobTimings()">
+                                      &nbsp to &nbsp <input id="endtime" name="endtime" type="time" placeholder="End Time*" required onblur="validateJobTimings()">
+                                      <p class="text-danger" id="sTime"></p>
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" id="address" name="address" type="textarea" placeholder="Address*" required onblur="validateRecordTraining()" onfocus="validateRecordTraining()"></textarea>
-                                        <p class="help-block text-danger" style="color: red;" id="mfee"></p>
+                                        <textarea class="form-control" id="address" name="address" type="textarea" placeholder="Address*" required onblur="validateJobAddress()" onfocus="validateRecordTraining()"></textarea>
+                                        <p class="help-block text-danger" style="color: red;" id="jaddress"></p>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" id="salary" name="salary" type="number"  onblur="validateRecordTraining()"  value="" placeholder="Salary*" required >
-                                        <p class="text-danger" style="color: red;" id="mtitle"></p>
+                                        <input class="form-control" id="salary" name="salary" type="number"  onblur="validateJobSalary()"  value="" placeholder="Salary*" required >
+                                        <p class="text-danger" style="color: red;" id="jsalary"></p>
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" id="preferences" name="preferences" type="textarea" placeholder="Preferences*" required onblur="validateRecordTraining()" onfocus="validateRecordTraining()"></textarea>
-                                        <p class="help-block text-danger" style="color: red;" id="mfee"></p>
+                                        <textarea class="form-control" id="preferences" name="preferences" type="textarea" placeholder="Preferences*" required onblur="validateJobPreferences()"></textarea>
+                                        <p class="help-block text-danger" style="color: red;" id="jpreferences"></p>
                                     </div>
                                     <div class="clearfix"></div>
                                     <div class="col-lg-12 text-center">

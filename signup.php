@@ -205,7 +205,7 @@
                                                 <div id="success"></div>
 
                                                 <button id="resetButton" class="btn btn-primary btn-xl text-uppercase" type="reset">Reset</button>
-                                                <button  class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitE();" >Register</button>
+                                                <button  class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitE();">Register</button>
                                             </div>
                                         </div>
 

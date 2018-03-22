@@ -79,17 +79,20 @@ if (isset($_SESSION['name'])) {
                     }
                 } else {
                         echo "<div class='row alert alert-success' >
-                    <div class='col-lg-12'>Username or password cannot be empty</div></div>";
+                    <div class='col-lg-12'>Username or password cannot be empty.</div></div>";
                     }
                 }
-                
+
                 ?>
                 <!-- if session has a msg  change later to single msg!-->
+
                 <?php if (isset($_SESSION['logoutmsg'])): ?>
-                    <div class="alert alert-success alert-dismissable">
+                  <!--
+                    <div class="alert alert-success">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <?php echo $_SESSION['logoutmsg']; ?>
                     </div>
+                  -->
                 <?php endif; ?>
                 <div class="row">
                     <div class="col-lg-12 offset-md-3">

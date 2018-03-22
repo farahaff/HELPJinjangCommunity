@@ -116,7 +116,7 @@ class Db {
                     return false;
                 }
             } else {
-                $this->setMsg("User not found!");
+                $this->setMsg("User not found.");
             }
             $sql = "SELECT * from employer WHERE username='$uname' LIMIT 1";
             $result = $this->query($sql);
@@ -134,7 +134,7 @@ class Db {
                     return false;
                 }
             } else {
-                $this->setMsg("User not found!");
+                $this->setMsg("User not found.");
             }
     }
 

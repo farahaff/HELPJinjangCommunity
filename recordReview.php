@@ -14,5 +14,3 @@ $row = mysqli_fetch_assoc($result);
 //end of member data
 $sql = "INSERT INTO `review` (`comment`, `rating`, `users_idusers`, `sessionid`,`trainerid`) VALUES ('{$msg}', {$rating}, {$userid}, {$sessionId},{$row['createdby']})";
 $db->query($sql);
-
-

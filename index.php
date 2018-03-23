@@ -15,15 +15,8 @@ The low cost housing flats built for this community has since been open for the 
 
 
 </h3><hr><br><br>
-            <div class="col-md-4" style="float:left">
-              <span class="fa-stack fa-4x">
-                <img class="img-fluid" src="img/user.png" alt="" style="padding-bottom:20px">
-              </span>
-              <h4 class="service-heading">Personal</h4>
-            </div>
-            <div class="col-md-8 offset-md-2">
-              <p class="text-muted" style="padding-top:10px">Personal training sessions are on a one-to-one basis. They are designed for individuals who are looking for a more engaging experience. It enables the member to set personal goals and keep track of their performace. Personal training sessions are ideal for those who are not comfortable in group settings.</p>
-            </div><br><br><hr><br><br>
+<h2 class="section-heading text-uppercase">How To Help</h2><br>
+
           </div>
         </div>
         <div class="row text-center">
@@ -31,8 +24,15 @@ The low cost housing flats built for this community has since been open for the 
             <span class="fa-stack fa-4x">
               <img class="img-fluid" src="img/dance.png" alt="">
             </span>
-            <h4 class="service-heading">Dance</h4>
-            <p class="text-muted">This class is designed for dance enthusiasts with a raw passion of dancing, whether it be professional or recreational. Members can choose from a variety of dance forms according to their comfort zone.</p>
+            <h4 class="service-heading">Volunteering</h4>
+            <p class="text-muted">With your support we can:
+•	Help poor families send their children to school
+•	Help poor children in their studies to enable them to stay in school
+•	Help children learn new skills to be able to secure employment in the future
+•	Help women build a better life for themselves, their families and their community
+Volunteer as a teacher:
+	We need teachers who can teach Primary Maths and English to children from Jinjang. Our classes are on Saturdays from 2 pm to 5 pm, in HELP University, KPD,  Jalan Dungun, Kuala Lumpur
+</p>
           </div>
           <div class="col-md-4">
             <span class="fa-stack fa-4x">

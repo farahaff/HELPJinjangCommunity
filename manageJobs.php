@@ -58,7 +58,7 @@ if (isset($_GET['logout'])) {
                                 <a class="nav-link js-scroll-trigger" href="postJob.php">Post Job Vacancy</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="manageJobs.php">Manage Jobs</a>
+                                <a class="nav-link js-scroll-trigger" href="#page-top">Manage Jobs</a>
                             </li>
 
                         <!-- if member show this
@@ -72,13 +72,13 @@ if (isset($_GET['logout'])) {
                         <?php endif; ?>
                       -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#page-top">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Profile
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
                                 <a class="dropdown-item js-scroll-trigger" href="#"><?php echo $_SESSION['name']; ?></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item js-scroll-trigger" href="#page-top">Edit Profile</a>
+                                <a class="dropdown-item js-scroll-trigger" href="editProfile.php">Edit Profile</a>
                                 <a class="dropdown-item js-scroll-trigger" href="home.php?logout">Logout</a>
                             </div>
                         </li>
@@ -86,3 +86,84 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
         </nav>
+
+<!-- Portfolio Grid -->
+<section class="bg-light" id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center"><br>
+                <h2 class="section-heading text-uppercase">Manage Jobs</h2><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <table id="tdatable" class="display" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Address</th>
+                            <th>Salary</th>
+                            <th>Edit Job</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $sql = "SELECT * FROM `jobposting` WHERE `createdBy`=" . $_SESSION['uniqueID'];
+                        $result = $db->query($sql);
+                        $numRows = $db->numRows($result);
+                        ?>
+                        <?php if ($numRows > 0): ?>
+                            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                                <tr>
+                                    <td><?php echo $row['jobTitle']; ?></td>
+                                    <td><?php echo $row['startTime']; ?></td>
+                                    <td><?php echo $row['endTime']; ?></td>
+                                    <td><?php echo $row['address']; ?></td>
+                                    <td><?php echo $row['salary']; ?></td>
+                                    <td>
+                                        <?php if($row['createdBy']==$_SESSION['uniqueID']): ?>
+                                        <?php endif; ?>
+                                        <a class="portfolio-link" data-toggle="modal" style="color: #b20000;"onclick="editJobModal(<?php echo $row['jobID']; ?>);" href="#portfolioModal1">Edit</a>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                        <?php else: ?>
+                        <h3>No History Available</h3>
+                    <?php endif; ?>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Portfolio Modals -->
+
+<!-- Modal 1 -->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class=" modal-body">
+                            <div id="content">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
+require_once './template/footer.php';

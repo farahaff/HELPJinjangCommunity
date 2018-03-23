@@ -31,7 +31,7 @@
       //-->
         <nav class="navbar new navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="index.php"><img src="img/logo4.png" height="45px"; width="250px";></a>
+                <a class="navbar-brand js-scroll-trigger" href="index.php"><img src="img/logo4.png" height="70px"; width="300px";></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fa fa-bars"></i>
@@ -85,20 +85,20 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="jobSeeker" role="tabpanel"><br/></br>
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 offset-md-3">
                                 <form id="contactForm" method="POST" novalidate>
-                                    <div class="row text-center">
+                                    <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input class="form-control"  id="username" type="text"  placeholder="Username*" required data-validation-required-message="Please enter your username." required>
-                                                <p class="help-block text-danger" style="color: red;"></p>
+                                                <input class="form-control" id="username" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username.">
+                                                <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
                                                 <input class="form-control" id="password" type="password" placeholder="Password*" required data-validation-required-message="Please enter your password.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="fullName" type="text"  placeholder="Full Name*" required data-validation-required-message="Please enter your full name.">
+                                                <input class="form-control" id="fullName" type="text" placeholder="Full Name*" required data-validation-required-message="Please enter your full name.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
@@ -106,26 +106,25 @@
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="mobileNo" type="number" placeholder="Mobile No*" required data-validation-required-message="Please enter your mobile number.">
+                                                <input class="form-control" id="mobileNo" type="text" placeholder="Mobile No*" required data-validation-required-message="Please enter your mobile number.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
                                               <textarea class="form-control" id="qualifications" type="textarea" placeholder="Qualifications"></textarea>
                                                 <p class="help-block text-danger"></p>
                                             </div>
-                                            <br>
-                                          </div>
-                                          <div class="col-md-6">
                                             <div class="form-group">
                                                 <textarea class="form-control" id="skills" type="textarea" placeholder="List Your skills"></textarea>
                                                 <p class="help-block text-danger"></p>
                                             </div>
+                                            <br>
                                             <div class="form-group">
                                                 Availability: &nbsp <input id="startTime" type="time" placeholder="Start Time">
                                                 &nbsp to &nbsp <input id="endTime" type="time" placeholder="End Time">
                                             </div>
+                                            <br>
                                             <div class="form-group">
-                                                <input class="form-control" id="preferredSalary" type="number" placeholder="Preferred Salary">
+                                                <input class="form-control" id="preferredSalary" type="text" placeholder="Preferred Salary">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
@@ -138,12 +137,12 @@
                                                 <input type="file" name="fileToUpload">
                                             </div>
                                             <div class="clearfix"></div>
-                                        </div>
-                                        <div class="col-md-12 text-center">
-                                            <br/>
-                                            <div id="success"></div>
-                                            <button id="resetButton" class="btn btn-primary btn-xl text-uppercase" type="reset">Reset</button>
-                                            <button   class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitJS();">Register</button>
+                                            <div class="col-lg-12 text-center">
+                                                <br/>
+                                                <div id="success"></div>
+                                                <button id="resetButton" class="btn btn-primary btn-xl text-uppercase" type="reset">Reset</button>
+                                                <button   class="btn btn-primary btn-xl text-uppercase" onclick="formSubmitJS();">Register</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </form>
@@ -157,7 +156,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input class="form-control" id="eUsername" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username." required>
+                                                <input class="form-control" id="eUsername" type="text" placeholder="Username*" required data-validation-required-message="Please enter your username.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
@@ -173,19 +172,19 @@
                                                     <option value="" selected disabled>Type of Organization</option>
                                                     <option value="Agriculture">Agriculture</option>
                                                     <option value="Automotive">Automotive</option>
-                                                    <option value="Construction">Construction</option>
-                                                    <option value="Cosmetics">Cosmetics</option>
-                                                    <option value="Education">Education</option>
-                                                    <option value="Engineering">Engineering</option>
-                                                    <option value="Entertainment">Entertainment</option>
-                                                    <option value="Finance">Finance</option>
-                                                    <option value="Food">Food</option>
-                                                    <option value="Health Care">Health Care</option>
-                                                    <option value="Information Technology">Information Technology</option>
-                                                    <option value="Marketing">Marketing</option>
-                                                    <option value="Media & Comunication">Media & Communication</option>
-                                                    <option value="Pharmaceutical">Pharmaceutical</option>
-                                                    <option value="Others">Others</option>
+                                                    <option value="3">Construction</option>
+                                                    <option value="4">Cosmetics</option>
+                                                    <option value="5">Education</option>
+                                                    <option value="6">Engineering</option>
+                                                    <option value="7">Entertainment</option>
+                                                    <option value="8">Finance</option>
+                                                    <option value="9">Food</option>
+                                                    <option value="10">Health Care</option>
+                                                    <option value="11">Information Technology</option>
+                                                    <option value="12">Marketing</option>
+                                                    <option value="13">Media/Comunication</option>
+                                                    <option value="14">Pharmaceutical</option>
+                                                    <option value="15">Others</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
@@ -197,7 +196,7 @@
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="phoneNo" type="number" placeholder="Phone No*" required data-validation-required-message="Please enter your mobile number.">
+                                                <input class="form-control" id="phoneNo" type="text" placeholder="Phone No*" required data-validation-required-message="Please enter your mobile number.">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                             <div class="clearfix"></div>

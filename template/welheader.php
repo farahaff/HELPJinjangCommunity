@@ -34,9 +34,9 @@ unset($_SESSION["logoutmsg"]);
 
         <!-- Navigation
       //-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <nav class="navbar new navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo4.png" height="70px"; width="300px";></a>
+                <a class="navbar-brand js-scroll-trigger" href="index.php"><img src="img/logo4.png" height="45px"; width="250px";></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fa fa-bars"></i>
@@ -44,28 +44,28 @@ unset($_SESSION["logoutmsg"]);
                 <div class="collapse navbar-collapse dropdown-content" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#info">Info</a>
+                            <a class="nav-link js-scroll-trigger" href="index.php#info">Info</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="aboutUs.php">
                                 About Us
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
-                                <a class="dropdown-item js-scroll-trigger" href="#">About AGN</a>
-                                <a class="dropdown-item js-scroll-trigger" href="updateInfo.php">Our Work</a>
-                                <a class="dropdown-item js-scroll-trigger" href="home.php?logout">Literacy & Numeracy <br>Programme</a>
+                                <a class="dropdown-item js-scroll-trigger" href="aboutUs.php">About AGN</a>
+                                <a class="dropdown-item js-scroll-trigger" href="aboutUs.php">Our Work</a>
+                                <a class="dropdown-item js-scroll-trigger" href="aboutUs.php">Literacy & Numeracy <br>Programme</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="howToHelp.php">
                                 How To Help
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
-                                <a class="dropdown-item js-scroll-trigger" href="#">Vounteering</a>
-                                <a class="dropdown-item js-scroll-trigger" href="updateInfo.php">Learning Materials</a>
-                                <a class="dropdown-item js-scroll-trigger" href="home.php?logout">Children School Supplies</a>
-                                <a class="dropdown-item js-scroll-trigger" href="home.php?logout">Sponsor a Child</a>
-                                <a class="dropdown-item js-scroll-trigger" href="home.php?logout">E-Business</a>
+                                <a class="dropdown-item js-scroll-trigger" href="howToHelp.php">Vounteering</a>
+                                <a class="dropdown-item js-scroll-trigger" href="howToHelp.php">Learning Materials</a>
+                                <a class="dropdown-item js-scroll-trigger" href="howToHelp.php">Children School Supplies</a>
+                                <a class="dropdown-item js-scroll-trigger" href="howToHelp.php">Sponsor a Child</a>
+                                <a class="dropdown-item js-scroll-trigger" href="howToHelp.php">E-Business</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -98,7 +98,8 @@ unset($_SESSION["logoutmsg"]);
         <header class="masthead">
             <div class="container">
                 <div class="intro-text">
-                    <div class="intro-lead-in">Impact a life, transform a community</div>
+                  <br><br><br><br><br>
+                    <div class="intro-lead-in" style="color:black;">Impact a life, transform a community</div>
                     <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="signup.php">Sign up</a>
                 </div>
             </div>

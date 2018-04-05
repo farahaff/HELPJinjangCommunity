@@ -8,7 +8,7 @@ if (!isset($_SESSION['name'])) {
 //signout
 if (isset($_GET['logout'])) {
     unset($_SESSION["name"]);
-    $_SESSION["logoutmsg"] = "Succefully signed out";
+    $_SESSION["logoutmsg"] = "Successfully signed out";
     $db->redirect('login.php');
 }
 ?>

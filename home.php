@@ -8,7 +8,7 @@ if (!isset($_SESSION['name'])) {
 //signout
 if (isset($_GET['logout'])) {
     unset($_SESSION["name"]);
-    $_SESSION["logoutmsg"] = "Succefully signed out";
+    $_SESSION["logoutmsg"] = "Successfully signed out";
     $db->redirect('login.php');
 }
 ?>
@@ -94,6 +94,7 @@ if (isset($_GET['logout'])) {
             <div class="col-md-12">
                 <div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <br><br><br>
                     Hi <strong><?php echo ucfirst($_SESSION['name']) ?>,</strong> Welcome back!
                 </div>
             </div>

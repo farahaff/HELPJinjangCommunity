@@ -12,11 +12,18 @@ if (isset($_GET['logout'])) {
     $db->redirect('login.php');
 }
 ?>
+
 <?php
-$sql = "SELECT * FROM `jobposting` WHERE `createdBy`=" . $_SESSION['uniqueID'];
+$sql = "SELECT * FROM `jobposting` WHERE `status`='open'";
 $result = $db->query($sql);
 $numRows = $db->numRows($result);
 ?>
+<script>
+    $('#portfolioModal1').on('show.bs.modal', function () {
+        alert("before model load");
+    })
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -56,30 +63,15 @@ $numRows = $db->numRows($result);
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="home.php">Home</a>
                         </li>
-                        <?php // $_SESSION['usertype'];// USER TYpe = 1 member , 2= trainer     ?>
-
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="postJob.php">Post Job</a>
+                                <a class="nav-link js-scroll-trigger" href="#page-top">Job Postings</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#page-top">Manage Jobs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="employerApplicationHistory.php">Applications</a>
+                                <a class="nav-link js-scroll-trigger" href="jobSeekerApplicationHistory.php">My Applications</a>
                             </li>
 
-                        <!-- if member show this
-                        <?php if ($_SESSION['usertype'] == 1): ?>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="registerSession.php">Register Session</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="viewHistoryMember.php">View Training History</a>
-                            </li>
-                        <?php endif; ?>
-                      -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">
                                 Profile
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
@@ -94,59 +86,62 @@ $numRows = $db->numRows($result);
             </div>
         </nav>
 
+
 <!-- Portfolio Grid -->
 <section class="bg-light" id="portfolio">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center"><br>
               <?php if ($numRows > 0): ?>
-                <h2 class="section-heading text-uppercase">Manage Jobs</h2><br><br>
+                <h2 class="section-heading text-uppercase">Job Postings</h2><br>
               <?php else: ?>
-              <h2>No History Available</h2><br><br>
-            <?php endif; ?>
+                <h2>No Jobs Available</h2><br><br><br><br><br><br><br>
+              <?php endif; ?>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <table id="tdatable" class="display" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Job Title</th>
-                            <th>From</th>
-                            <th>To</th>
-                            <th>Address</th>
-                            <th>Salary</th>
-                            <th>Edit Job</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php if ($numRows > 0): ?>
-                            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-                                <tr>
-                                    <td><?php echo $row['jobTitle']; ?></td>
-                                    <td><?php echo $row['startTime']; ?></td>
-                                    <td><?php echo $row['endTime']; ?></td>
-                                    <td><?php echo $row['address']; ?></td>
-                                    <td><?php echo $row['salary']; ?></td>
-                                    <td>
-                                        <?php if($row['createdBy']==$_SESSION['uniqueID']): ?>
-                                        <?php endif; ?>
-                                        <a class="portfolio-link" data-toggle="modal" style="color: #b20000;"onclick="editJobModal(<?php echo $row['jobID']; ?>);" href="#portfolioModal1">Edit</a>
-                                    </td>
-                                </tr>
-                            <?php endwhile; ?>
-                    <?php endif; ?>
 
-                    </tbody>
-                </table>
-            </div>
+        <?php if ($numRows > 0): ?>
+            <!--- display all teh  available training sessions !-->
+            <div class="row">
+                <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                    <?php
+                    $sql2 = "SELECT * FROM `jobtype` WHERE `idjtype`=" . $row['jtype'] . " LIMIT 1";
+                    $result2 = $db->query($sql2);
+                    //get the session type mma,sport,dance
+                    $rowctype = mysqli_fetch_assoc($result2);
+                    ?>
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" onclick="loadModel(<?php echo $row['jobID']; ?>);" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="img/portfolio/<?php echo $rowctype['img']; ?>.jpg" alt="<?php echo $rowctype['img']; ?>">
+                        </a>
+                        <?php
+                        $sql3 = "SELECT * FROM `employer` WHERE `userID`=" . $row['createdBy'] . " LIMIT 1";
+                        $result3 = $db->query($sql3);
+                        //get the session type mma,sport,dance
+                        $employer = mysqli_fetch_assoc($result3);
+                        ?>
+                        <div class="portfolio-caption" style="padding:15px">
+                            <h4><?php echo strtoupper($row['jobTitle']); ?></h4>
+                            <p class="text-muted" style="font-size:20px"><?php echo strtoupper($employer['orgName']); ?>
+                                <br>(<?php echo $employer['industry']; ?>)
+                          </p>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </div>
     </div>
 </section>
+
 <!-- Portfolio Modals -->
 
 <!-- Modal 1 -->
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="portfolio-modal modal fade" id="portfolioModal1" php="loadphp" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -154,10 +149,10 @@ $numRows = $db->numRows($result);
                     <div class="rl"></div>
                 </div>
             </div>
-            <div class="container">
+            <div class="container" >
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <div class=" modal-body">
+                        <div class="modal-body">
                             <div id="content">
 
                             </div>
@@ -168,6 +163,9 @@ $numRows = $db->numRows($result);
         </div>
     </div>
 </div>
+
+
+
 
 <?php
 require_once './template/footer.php';

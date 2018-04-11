@@ -52,25 +52,13 @@ if (isset($_GET['logout'])) {
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="home.php">Home</a>
                         </li>
-                        <?php // $_SESSION['usertype'];// USER TYpe = 1 member , 2= trainer     ?>
-
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="postJob.php">Post Job Vacancy</a>
+                                <a class="nav-link js-scroll-trigger" href="searchJobs.php">Job Postings</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="manageJobs.php">Manage Jobs</a>
+                                <a class="nav-link js-scroll-trigger" href="applicationHistory.php">Application History</a>
                             </li>
 
-                        <!-- if member show this
-                        <?php if ($_SESSION['usertype'] == 1): ?>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="registerSession.php">Register Session</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="viewHistoryMember.php">View Training History</a>
-                            </li>
-                        <?php endif; ?>
-                      -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#page-top">
                                 Profile
@@ -78,7 +66,7 @@ if (isset($_GET['logout'])) {
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
                                 <a class="dropdown-item js-scroll-trigger" href="#"><?php echo $_SESSION['name']; ?></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item js-scroll-trigger" href="#page-top">Edit Profile</a>
+                                <a class="dropdown-item js-scroll-trigger" href="">Edit Profile</a>
                                 <a class="dropdown-item js-scroll-trigger" href="home.php?logout">Logout</a>
                             </div>
                         </li>

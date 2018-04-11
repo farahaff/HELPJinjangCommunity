@@ -132,11 +132,11 @@ function hideGroup() {
 }
 
 //the model in resgiter session for members
-function loadModel(id) {
-    var dataString = 'id=' + id
+function loadModel(jobID) {
+    var dataString = 'jobID=' + jobID
     $.ajax({
         type: "POST",
-        url: "registerSessionModel.php",
+        url: "applyJobModal.php",
         data: dataString,
         success: function (response) {
             //change the model after click
@@ -148,11 +148,11 @@ function loadModel(id) {
 }
 
 //register user for the seesion
-function registerUser(userid, sessionid) {
-    var dataString = 'userid=' + userid + '&sessionid=' + sessionid;
+function applyJob(userID, jobID) {
+    var dataString = 'userID=' + userID + '&jobID=' + jobID;
     $.ajax({
         type: "POST",
-        url: "resgisterUser.php",
+        url: "applyJob.php",
         data: dataString,
         success: function (response) {
             //change the model after click

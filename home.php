@@ -52,25 +52,28 @@ if (isset($_GET['logout'])) {
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="#page-top">Home</a>
                         </li>
-                        <?php // $_SESSION['usertype'];// USER TYpe = 1 member , 2= trainer     ?>
 
+                        <?php if ($_SESSION['userType'] == "employer"): ?>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="postJob.php">Post Job Vacancy</a>
+                                <a class="nav-link js-scroll-trigger" href="postJob.php">Post Job</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link js-scroll-trigger" href="manageJobs.php">Manage Jobs</a>
                             </li>
-
-                        <!-- if member show this
-                        <?php if ($_SESSION['usertype'] == 1): ?>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="registerSession.php">Register Session</a>
+                                <a class="nav-link js-scroll-trigger" href="employerApplicationHistory.php">Applications</a>
+                            </li>
+                          <?php endif; ?>
+
+                        <?php if ($_SESSION['userType'] == "jobseeker"): ?>
+                            <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="searchJobs.php">Job Postings</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="viewHistoryMember.php">View Training History</a>
+                                <a class="nav-link js-scroll-trigger" href="jobSeekerApplicationHistory.php">My Applications</a>
                             </li>
                         <?php endif; ?>
-                      -->
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Profile
@@ -86,20 +89,20 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
         </nav>
-<!--- Google charts -->
-<!-- Aboutsomething -->
+
     <div class="container" id="aboutHome">
-        <!---Welcome Alert-->
-        <div class="row" id="msg">
-            <div class="col-md-12">
-                <div class="alert alert-success alert-dismissable">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    Hi <strong><?php echo ucfirst($_SESSION['name']) ?>,</strong> Welcome back!
-                </div>
-            </div>
-        </div>
-        <!-- About -->
         <section>
+          <!---Welcome Alert-->
+          <div class="row" id="msg">
+              <div class="col-md-12">
+                  <div class="alert alert-success alert-dismissable">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      Hi <strong><?php echo ucfirst($_SESSION['name']) ?>,</strong> Welcome back!
+                  </div>
+              </div>
+          </div>
+          <br>
+          <!-- About -->
           <div class="container" id="">
             <div class="row">
               <div class="col-lg-12 text-center">

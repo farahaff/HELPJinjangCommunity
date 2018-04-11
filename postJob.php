@@ -13,6 +13,63 @@ if (isset($_GET['logout'])) {
 }
 ?>
 
+<?php
+$sql = "SELECT * FROM `employer` WHERE `userID`=" . $_SESSION['uniqueID'];
+$result = $db->query($sql);
+$employer = mysqli_fetch_assoc($result);
+?>
+
+<?php if ($employer['industry'] == 'Agriculture'):
+  $jtype = 1;
+  ?>
+<?php elseif ($employer['industry'] == 'Automotive'):
+  $jtype = 2;
+  ?>
+<?php elseif ($employer['industry'] == 'Construction'):
+  $jtype = 3;
+  ?>
+<?php elseif ($employer['industry'] == 'Cosmetics'):
+  $jtype = 4;
+  ?>
+<?php elseif ($employer['industry'] == 'Education'):
+  $jtype = 5;
+  ?>
+<?php elseif ($employer['industry'] == 'Engineering'):
+  $jtype = 6;
+  ?>
+<?php elseif ($employer['industry'] == 'Entertainment'):
+  $jtype = 7;
+  ?>
+<?php elseif ($employer['industry'] == 'Finance'):
+  $jtype = 8;
+  ?>
+<?php elseif ($employer['industry'] == 'Food'):
+  $jtype = 9;
+  ?>
+<?php elseif ($employer['industry'] == 'Health Care'):
+  $jtype = 10;
+  ?>
+<?php elseif ($employer['industry'] == 'Information Technology'):
+  $jtype = 11;
+  ?>
+<?php elseif ($employer['industry'] == 'Marketing'):
+  $jtype = 12;
+  ?>
+<?php elseif ($employer['industry'] == 'Media & Communication'):
+  $jtype = 13;
+  ?>
+<?php elseif ($employer['industry'] == 'Pharmaceutical'):
+  $jtype = 14;
+  ?>
+<?php elseif ($employer['industry'] == 'Others'):
+  $jtype = 15;
+  ?>
+<?php endif; ?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -55,10 +112,13 @@ if (isset($_GET['logout'])) {
                         <?php // $_SESSION['usertype'];// USER TYpe = 1 member , 2= trainer     ?>
 
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#page-top">Post Job Vacancy</a>
+                                <a class="nav-link js-scroll-trigger" href="#page-top">Post Job</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link js-scroll-trigger" href="manageJobs.php">Manage Jobs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="employerApplicationHistory.php">Applications</a>
                             </li>
 
                         <!-- if member show this
@@ -106,9 +166,9 @@ if (isset($_GET['logout'])) {
             //} else {
             if ($_POST['jobtitle']!=""&&$_POST['jobdescription']!=""&&$_POST['reqqualification']!=""&&$_POST['reqskills']!=""&&$_POST['starttime']!=""&&$_POST['endtime']!=""&&$_POST['address']!=""&&$_POST['salary']!=""&&$_POST['preferences']!=""){
 
-                    $sql = "INSERT INTO `jobposting` (`jobtitle`, `jobdescription`,`reqQualifications`, `reqskills`, `starttime`, `endtime`, `address`, `salary`, `preferences`, `createdby`)
+                    $sql = "INSERT INTO `jobposting` (`jobtitle`, `jobdescription`,`reqQualifications`, `reqskills`, `starttime`, `endtime`, `address`, `salary`, `preferences`, `createdby`, `jtype`, `status`)
                                     VALUES ('{$_POST['jobtitle']}', '{$_POST['jobdescription']}','{$_POST['reqqualification']}', '{$_POST['reqskills']}',  '{$_POST['starttime']}', '{$_POST['endtime']}',
-                                      '{$_POST['address']}','{$_POST['salary']}','{$_POST['preferences']}',{$_SESSION['uniqueID']})";
+                                      '{$_POST['address']}','{$_POST['salary']}','{$_POST['preferences']}','{$_SESSION['uniqueID']}','$jtype','open')";
 
                 if (($db->query($sql))) {
                     echo '<div class="alert alert-success">

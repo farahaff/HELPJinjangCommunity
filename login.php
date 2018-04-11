@@ -69,9 +69,13 @@ if (isset($_SESSION['name'])) {
                 <?php
                 if (isset($_POST['login'])) {
                     if ($_POST['uname']!=""&&$_POST['pwd']!=""){
-                    if ($db->authenticate($_POST['uname'], $_POST['pwd'], "")) {
+                    if ($db->authenticate($_POST['uname'], $_POST['pwd'], "") == "jobseeker") {
                         $db->redirect('home.php');
-                    } else {
+                        $_SESSION['userType']='jobseeker';
+                    } elseif ($db->authenticate($_POST['uname'], $_POST['pwd'], "") == "employer") {
+                        $db->redirect('home.php');
+                        $_SESSION['userType']='employer';
+                    }else {
                         echo "<div class='row alert alert-success' >
                     <div class='col-lg-12'>"
                         . $_SESSION['msg'] .

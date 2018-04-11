@@ -110,7 +110,7 @@ class Db {
                     $_SESSION['msd'] = "Successfully Logged In";
                     $_SESSION['uniqueID'] = $row['userID'];
                     $this->setMsg("Login successful!");
-                    return true;
+                    return "jobseeker";
                 } else {
                     $this->setMsg("The username or password is incorrect.");
                     return false;
@@ -128,7 +128,7 @@ class Db {
                     $_SESSION['msd'] = "Successfully Logged In";
                     $_SESSION['uniqueID'] = $row['userID'];
                     $this->setMsg("Login successful!");
-                    return true;
+                    return "employer";
                 } else {
                     $this->setMsg("The username or password is incorrect.");
                     return false;

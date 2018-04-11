@@ -12,11 +12,16 @@ if (isset($_GET['logout'])) {
     $db->redirect('login.php');
 }
 ?>
+
 <?php
-$sql = "SELECT * FROM `jobposting` WHERE `createdBy`=" . $_SESSION['uniqueID'];
+
+$sql = "SELECT DISTINCT jobsapplied.userID,jobposting.jobID,jobposting.jobTitle,jobposting.startTime,jobposting.endTime,jobposting.address,jobposting.salary,jobposting.status  "
+        . "FROM jobsapplied INNER JOIN "
+        . "jobposting ON jobsapplied.jobID=jobposting.jobID WHERE jobsapplied.userID=" . $_SESSION['uniqueID'];
 $result = $db->query($sql);
 $numRows = $db->numRows($result);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -56,28 +61,13 @@ $numRows = $db->numRows($result);
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="home.php">Home</a>
                         </li>
-                        <?php // $_SESSION['usertype'];// USER TYpe = 1 member , 2= trainer     ?>
-
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="postJob.php">Post Job</a>
+                                <a class="nav-link js-scroll-trigger" href="searchJobs.php">Job Postings</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="#page-top">Manage Jobs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="employerApplicationHistory.php">Applications</a>
+                                <a class="nav-link js-scroll-trigger" href="#page-top">My Applications</a>
                             </li>
 
-                        <!-- if member show this
-                        <?php if ($_SESSION['usertype'] == 1): ?>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="registerSession.php">Register Session</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="viewHistoryMember.php">View Training History</a>
-                            </li>
-                        <?php endif; ?>
-                      -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Profile
@@ -100,10 +90,10 @@ $numRows = $db->numRows($result);
         <div class="row">
             <div class="col-lg-12 text-center"><br>
               <?php if ($numRows > 0): ?>
-                <h2 class="section-heading text-uppercase">Manage Jobs</h2><br><br>
+                <h2 class="section-heading text-uppercase">My Applications</h2><br><br>
               <?php else: ?>
-              <h2>No History Available</h2><br><br>
-            <?php endif; ?>
+                <h2>No Applications Made</h2><br><br>
+              <?php endif; ?>
             </div>
         </div>
         <div class="row">
@@ -116,7 +106,7 @@ $numRows = $db->numRows($result);
                             <th>To</th>
                             <th>Address</th>
                             <th>Salary</th>
-                            <th>Edit Job</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -129,9 +119,7 @@ $numRows = $db->numRows($result);
                                     <td><?php echo $row['address']; ?></td>
                                     <td><?php echo $row['salary']; ?></td>
                                     <td>
-                                        <?php if($row['createdBy']==$_SESSION['uniqueID']): ?>
-                                        <?php endif; ?>
-                                        <a class="portfolio-link" data-toggle="modal" style="color: #b20000;"onclick="editJobModal(<?php echo $row['jobID']; ?>);" href="#portfolioModal1">Edit</a>
+                                        <a class="portfolio-link disabled" data-toggle="modal" style="color: #b20000;"<?php if($row['status']=='closed'): ;?>onclick="editJobModal(<?php echo $row['jobID']; ?>);"<?php endif; ?> href="#portfolioModal1">Pending</a>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>

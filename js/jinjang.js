@@ -162,6 +162,7 @@ function applyJob(userID, jobID) {
     });
     event.preventDefault();
 }
+
 // update trainer submited data
 function editJobModal(jobID) {
     var dataString = 'jobID=' + jobID;
@@ -176,7 +177,38 @@ function editJobModal(jobID) {
 
     });
     event.preventDefault();
+}
 
+// update trainer submited data
+function processApplicationModal(userID, jobID) {
+    var dataString = 'userID=' + userID + '&jobID=' + jobID;
+    $.ajax({
+        type: "POST",
+        url: "loadProcessApplicationModal.php",
+        data: dataString,
+        success: function (response) {
+            //change the model after click
+            $("#content").html(response);//
+        }
+
+    });
+    event.preventDefault();
+}
+
+function updateApplication(userID, jobID, employerID, decision) {
+    var dataString = 'userID=' + userID + '&jobID=' + jobID + '&employerID=' + employerID + '&decision=' + decision;
+    $.ajax({
+        type: "POST",
+        url: "updateApplicationSubmission.php",
+        data: dataString,
+        success: function (response) {
+            //change the model after click
+            alert("Application has been processed.");
+            location.reload();
+        }
+
+    });
+    event.preventDefault();
 }
 //update trainer set date through model
 function editJob(jobID) {
@@ -205,6 +237,8 @@ function editJob(jobID) {
     event.preventDefault();
 }
 //load the member rewviwe model
+
+
 
 function loadModelReviewMember(sessionid) {
     var dataString = 'sessionid=' + sessionid;

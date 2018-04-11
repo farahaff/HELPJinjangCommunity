@@ -119,7 +119,7 @@ $numRows = $db->numRows($result);
                                     <td><?php echo $row['address']; ?></td>
                                     <td><?php echo $row['salary']; ?></td>
                                     <td>
-                                        <a class="portfolio-link disabled" data-toggle="modal" style="color: #b20000;"<?php if($row['status']=='closed'): ;?>onclick="editJobModal(<?php echo $row['jobID']; ?>);"<?php endif; ?> href="#portfolioModal1">Pending</a>
+                                        <a class="portfolio-link disabled" data-toggle="modal" style="color: gray;"<?php if($row['status']=='open'): ;?>onclick=""<?php endif; ?> href="#portfolioModal1">Processing</a>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>

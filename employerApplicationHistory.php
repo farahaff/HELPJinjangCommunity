@@ -17,10 +17,12 @@ if (isset($_GET['logout'])) {
 
 $sql = "SELECT DISTINCT jobsapplied.userID,jobposting.jobID,jobposting.jobTitle,jobposting.startTime,jobposting.endTime,jobposting.address,jobposting.salary,jobposting.status  "
         . "FROM jobsapplied INNER JOIN "
-        . "jobposting ON jobsapplied.jobID=jobposting.jobID WHERE jobsapplied.userID=" . $_SESSION['uniqueID'];
+        . "jobposting ON jobsapplied.jobID=jobposting.jobID WHERE jobposting.createdBy=" . $_SESSION['uniqueID'];
 $result = $db->query($sql);
 $numRows = $db->numRows($result);
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -93,7 +95,7 @@ $numRows = $db->numRows($result);
         <div class="row">
             <div class="col-lg-12 text-center"><br>
               <?php if ($numRows > 0): ?>
-                <h2 class="section-heading text-uppercase">Application History</h2><br><br>
+                <h2 class="section-heading text-uppercase">Applications</h2><br><br>
               <?php else: ?>
                 <h2>No Applications Made</h2><br><br>
               <?php endif; ?>
@@ -104,10 +106,10 @@ $numRows = $db->numRows($result);
                 <table id="tdatable" class="display" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>Applicant Name</th>
+                            <th>Username</th>
                             <th>Job Title</th>
-                            <th>From</th>
-                            <th>To</th>
-                            <th>Address</th>
+                            <th>Location</th>
                             <th>Salary</th>
                             <th>Status</th>
                         </tr>
@@ -115,14 +117,19 @@ $numRows = $db->numRows($result);
                     <tbody>
                         <?php if ($numRows > 0): ?>
                             <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                              <?php
+                              $sql2 = "SELECT * FROM jobseeker WHERE userID =". $row['userID'];
+                              $result2 = $db->query($sql2);
+                              $row2 = mysqli_fetch_assoc($result2);
+                              ?>
                                 <tr>
+                                    <td><?php echo $row2['fullName']; ?></td>
+                                    <td><?php echo $row2['username']; ?></td>
                                     <td><?php echo $row['jobTitle']; ?></td>
-                                    <td><?php echo $row['startTime']; ?></td>
-                                    <td><?php echo $row['endTime']; ?></td>
                                     <td><?php echo $row['address']; ?></td>
                                     <td><?php echo $row['salary']; ?></td>
                                     <td>
-                                        <a class="portfolio-link disabled" data-toggle="modal" style="color: #b20000;"<?php if($row['status']=='closed'): ;?>onclick="editJobModal(<?php echo $row['jobID']; ?>);"<?php endif; ?> href="#portfolioModal1">Pending</a>
+                                      <a class="portfolio-link" data-toggle="modal" style="color: #b20000;"onclick="processApplicationModal(<?php echo $row['userID']; ?>,<?php echo $row['jobID']; ?>);" href="#portfolioModal1">Process</a>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>

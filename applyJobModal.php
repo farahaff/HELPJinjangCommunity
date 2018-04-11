@@ -5,7 +5,7 @@ $db = new Db();
 $sql = "SELECT * FROM `jobposting` WHERE `jobID` =" . $_POST['jobID'] . " LIMIT 1";
 $result = $db->query($sql);
 $row = mysqli_fetch_assoc($result);
-//employer
+
 $sql2 = "SELECT * FROM `employer` WHERE `userID`=" . $row['createdBy'] . " LIMIT 1";
 $result2 = $db->query($sql2);
 $employer = mysqli_fetch_assoc($result2);
@@ -13,7 +13,6 @@ $employer = mysqli_fetch_assoc($result2);
 $startTime = date('h:m A', strtotime($row['startTime']));
 $endTime = date('h:m A', strtotime($row['endTime']));
 
-//get the session type mma,sport,dance
 $rowctype = mysqli_fetch_assoc($result2);
 $uppercase = strtoupper($employer['orgName']);
 

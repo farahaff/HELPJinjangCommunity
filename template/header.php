@@ -64,9 +64,9 @@ if (isset($_GET['logout'])) {
                                 Profile
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
-                                <a class="dropdown-item js-scroll-trigger" href="#"><?php echo $_SESSION['name']; ?></a>
+                                <p class="dropdown-item js-scroll-trigger" href=""><strong><?php echo $_SESSION['name']; ?></strong></p>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item js-scroll-trigger" href="">Edit Profile</a>
+                                <a class="dropdown-item js-scroll-trigger" href="#page-top">Edit Profile</a>
                                 <a class="dropdown-item js-scroll-trigger" href="home.php?logout">Logout</a>
                             </div>
                         </li>

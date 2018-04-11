@@ -16,5 +16,10 @@ if ($numrows > 0) {
     $sql = "INSERT INTO `jobsapplied` (`userID`, `jobID`) VALUES ($userID, $jobID)";
 
     $db->query($sql);
+
+    $sql2 = "INSERT INTO `application` (`userID`, `jobID`, `status`) VALUES ($userID, $jobID, 'pending')";
+
+    $db->query($sql2);
+
     echo "Application Successful!";
 }

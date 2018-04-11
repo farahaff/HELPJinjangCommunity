@@ -2,6 +2,7 @@
 
 require_once("inc/dbcall.php");
 $db = new Db();
+
 $jobID = $_POST['jobID'];
 //    var dataString = 'sessionid=' + id + '&udate=' + udate + '&utime=' + utime + '&ufee=' + ufee + '&uclassStatus=' + uclassStatus + '&uclassType=' + uclassType;
 $sql = "UPDATE `jobposting` SET "

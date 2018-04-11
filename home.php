@@ -79,7 +79,7 @@ if (isset($_GET['logout'])) {
                                 Profile
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
-                                <a class="dropdown-item js-scroll-trigger" href="#"><?php echo $_SESSION['name']; ?></a>
+                                <p class="dropdown-item js-scroll-trigger" href="#"><strong><?php echo $_SESSION['name']; ?></strong></p>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item js-scroll-trigger" href="editProfile.php">Edit Profile</a>
                                 <a class="dropdown-item js-scroll-trigger" href="home.php?logout">Logout</a>
@@ -91,20 +91,8 @@ if (isset($_GET['logout'])) {
         </nav>
 
     <div class="container" id="aboutHome">
-<<<<<<< HEAD
-=======
-        <!---Welcome Alert-->
-        <div class="row" id="msg">
-            <div class="col-md-12">
-                <div class="alert alert-success alert-dismissable">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <br><br><br>
-                    Hi <strong><?php echo ucfirst($_SESSION['name']) ?>,</strong> Welcome back!
-                </div>
-            </div>
-        </div>
+
         <!-- About -->
->>>>>>> 91785387aff50c37f393f3152f922af36b98694c
         <section>
           <!---Welcome Alert-->
           <div class="row" id="msg">

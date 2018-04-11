@@ -102,7 +102,7 @@ $numRows = $db->numRows($result);
               <?php if ($numRows > 0): ?>
                 <h2 class="section-heading text-uppercase">Manage Jobs</h2><br><br>
               <?php else: ?>
-              <h2>No History Available</h2><br><br>
+              <h2>No Jobs Posted</h2><br><br>
             <?php endif; ?>
             </div>
         </div>

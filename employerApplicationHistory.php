@@ -95,7 +95,7 @@ $numRows = $db->numRows($result);
         <div class="row">
             <div class="col-lg-12 text-center"><br>
               <?php if ($numRows > 0): ?>
-                <h2 class="section-heading text-uppercase">Applications</h2><br><br>
+                <h2 class="section-heading text-uppercase">Manage Applications</h2><br><br>
               <?php else: ?>
                 <h2>No Applications Made</h2><br><br>
               <?php endif; ?>
@@ -136,8 +136,16 @@ $numRows = $db->numRows($result);
                                     <td><?php echo $row['address']; ?></td>
                                     <td><?php echo $row['salary']; ?></td>
                                     <td>
-                                      <a class="portfolio-link" data-toggle="modal" style="color: #b20000;"onclick="processApplicationModal(<?php echo $row['userID']; ?>,<?php echo $row['jobID']; ?>);" href="#portfolioModal1">
+                                      <?php if ($row3['status']=='Accepted'): ?>
+                                      <a class="portfolio-link disabled"  class="portfolio-link" data-toggle="modal" style="color: #b20000;"onclick="processApplicationModal(<?php echo $row['userID']; ?>,<?php echo $row['jobID']; ?>);" href="#portfolioModal1">
                                         <?php if ($row3['status'] == 'Pending'): ?>Process<?php else: echo $row3['status']; ?> <?php endif; ?></a>
+                                      <?php elseif ($row3['status']=='Rejected'): ?>
+                                          <a class="portfolio-link disabled"  class="portfolio-link" data-toggle="modal" style="color: #b20000;"onclick="processApplicationModal(<?php echo $row['userID']; ?>,<?php echo $row['jobID']; ?>);" href="#portfolioModal1">
+                                            <?php if ($row3['status'] == 'Pending'): ?>Process<?php else: echo $row3['status']; ?> <?php endif; ?></a>
+                                      <?php else: ?>
+                                        <a class="portfolio-link"  class="portfolio-link" data-toggle="modal" style="color: #b20000;"onclick="processApplicationModal(<?php echo $row['userID']; ?>,<?php echo $row['jobID']; ?>);" href="#portfolioModal1">
+                                          <?php if ($row3['status'] == 'Pending'): ?>Process<?php else: echo $row3['status']; ?> <?php endif; ?></a>
+                                      <? endif; ?>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>

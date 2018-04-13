@@ -56,7 +56,7 @@ if (isset($_GET['logout'])) {
                                 <a class="nav-link js-scroll-trigger" href="searchJobs.php">Job Postings</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="applicationHistory.php">Application History</a>
+                                <a class="nav-link js-scroll-trigger" href="jobSeekerApplicationHistory.php">Application History</a>
                             </li>
 
                         <li class="nav-item dropdown">

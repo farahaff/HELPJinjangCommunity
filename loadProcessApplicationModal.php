@@ -22,6 +22,9 @@ $uppercase = strtoupper($row4['orgName']);
 $startTime = date('h:m A', strtotime($row3['startTime']));
 $endTime = date('h:m A', strtotime($row3['endTime']));
 
+$accepted = "Accepted";
+
+
 echo "<h3 class='text-uppercase'>Applicant</h3>
      <ul class='list-inline'>
      <li>Full Name: {$row2['fullName']}</li>
@@ -45,10 +48,10 @@ echo "<h3 class='text-uppercase'>Applicant</h3>
 
       <div class='col-lg-12 text-center'>
       <br/>
-
+      {$userID},{$jobID},{$_SESSION['uniqueID']},{$accepted}
       <div id='success'></div>
-              <button class='btn btn-primary btn-md text-uppercase' data-dismiss='modal' onclick='updateApplication({$userID},{$jobID},{$_SESSION['uniqueID']},'Accepted')' style='background-color:green;border-color:green'><i class='fa fa-check-circle'></i> Accept</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button class='btn btn-primary btn-md text-uppercase' data-dismiss='modal' onclick='updateApplication({$userID},{$jobID},{$_SESSION['uniqueID']},'Rejected')'><i class='fa fa-times-circle'></i> Reject</button>
+              <button class='btn btn-primary btn-md text-uppercase' data-dismiss='modal' onclick='acceptApplication({$userID},{$jobID},{$_SESSION['uniqueID']})' style='background-color:green;border-color:green'><i class='fa fa-check-circle'></i> Accept</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button class='btn btn-primary btn-md text-uppercase' data-dismiss='modal' onclick='rejectApplication({$userID},{$jobID},{$_SESSION['uniqueID']})'><i class='fa fa-times-circle'></i> Reject</button>
       </div>
   </div>
 

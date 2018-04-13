@@ -61,7 +61,7 @@ if (isset($_GET['logout'])) {
                                 <a class="nav-link js-scroll-trigger" href="manageJobs.php">Manage Jobs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="employerApplicationHistory.php">Applications</a>
+                                <a class="nav-link js-scroll-trigger" href="employerApplicationHistory.php">Manage Applications</a>
                             </li>
                           <?php endif; ?>
 

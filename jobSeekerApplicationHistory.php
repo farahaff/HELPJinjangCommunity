@@ -20,6 +20,11 @@ $sql = "SELECT DISTINCT jobsapplied.userID,jobposting.jobID,jobposting.jobTitle,
         . "jobposting ON jobsapplied.jobID=jobposting.jobID WHERE jobsapplied.userID=" . $_SESSION['uniqueID'];
 $result = $db->query($sql);
 $numRows = $db->numRows($result);
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -73,8 +78,8 @@ $numRows = $db->numRows($result);
                                 Profile
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
-                                <a class="dropdown-item js-scroll-trigger" href="#"><?php echo $_SESSION['name']; ?></a>
-                                <div class="dropdown-divider"></div>
+                              <p class="dropdown-item js-scroll-trigger" href="#"><strong><?php echo $_SESSION['name']; ?></strong></p>
+                              <div class="dropdown-divider"></div>
                                 <a class="dropdown-item js-scroll-trigger" href="editProfile.php">Edit Profile</a>
                                 <a class="dropdown-item js-scroll-trigger" href="home.php?logout">Logout</a>
                             </div>
@@ -85,7 +90,7 @@ $numRows = $db->numRows($result);
         </nav>
 
 <!-- Portfolio Grid -->
-<section class="bg-light" id="portfolio">
+<section class="bg-light" id="signup">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center"><br>
@@ -112,6 +117,13 @@ $numRows = $db->numRows($result);
                     <tbody>
                         <?php if ($numRows > 0): ?>
                             <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                              <?php
+                              $userID = $row['userID'];
+                              $jobID = $row['jobID'];
+                              $sql2 = "SELECT * FROM `application` WHERE `jobID` =" . $jobID . " AND `application`.`userID` =" . $userID . " LIMIT 1";
+                              $result2 = $db->query($sql2);
+                              $row2 = mysqli_fetch_assoc($result2);
+                              ?>
                                 <tr>
                                     <td><?php echo $row['jobTitle']; ?></td>
                                     <td><?php echo $row['startTime']; ?></td>
@@ -119,7 +131,7 @@ $numRows = $db->numRows($result);
                                     <td><?php echo $row['address']; ?></td>
                                     <td><?php echo $row['salary']; ?></td>
                                     <td>
-                                        <a class="portfolio-link disabled" data-toggle="modal" style="color: gray;"<?php if($row['status']=='open'): ;?>onclick=""<?php endif; ?> href="#portfolioModal1">Processing</a>
+                                        <a class="portfolio-link disabled" data-toggle="modal" style="color: #b20000;"<?php if($row['status']=='open'): ;?>onclick=""<?php endif; ?> href="#portfolioModal1"><?php echo $row2['status']; ?></a>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>

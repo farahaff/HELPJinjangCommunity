@@ -118,7 +118,7 @@ $employer = mysqli_fetch_assoc($result);
                                 <a class="nav-link js-scroll-trigger" href="manageJobs.php">Manage Jobs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="employerApplicationHistory.php">Applications</a>
+                                <a class="nav-link js-scroll-trigger" href="employerApplicationHistory.php">Manage Applications</a>
                             </li>
 
                         <!-- if member show this
@@ -136,8 +136,8 @@ $employer = mysqli_fetch_assoc($result);
                                 Profile
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
-                                <a class="dropdown-item js-scroll-trigger" href="#"><?php echo $_SESSION['name']; ?></a>
-                                <div class="dropdown-divider"></div>
+                              <p class="dropdown-item js-scroll-trigger" href="#"><strong><?php echo $_SESSION['name']; ?></strong></p>
+                              <div class="dropdown-divider"></div>
                                 <a class="dropdown-item js-scroll-trigger" href="editProfile.php">Edit Profile</a>
                                 <a class="dropdown-item js-scroll-trigger" href="home.php?logout">Logout</a>
                             </div>

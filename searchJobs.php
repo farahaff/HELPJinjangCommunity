@@ -75,8 +75,8 @@ $numRows = $db->numRows($result);
                                 Profile
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbarResponsive">
-                                <a class="dropdown-item js-scroll-trigger" href="#"><?php echo $_SESSION['name']; ?></a>
-                                <div class="dropdown-divider"></div>
+                              <p class="dropdown-item js-scroll-trigger" href="#"><strong><?php echo $_SESSION['name']; ?></strong></p>
+                              <div class="dropdown-divider"></div>
                                 <a class="dropdown-item js-scroll-trigger" href="editProfile.php">Edit Profile</a>
                                 <a class="dropdown-item js-scroll-trigger" href="home.php?logout">Logout</a>
                             </div>
@@ -141,7 +141,7 @@ $numRows = $db->numRows($result);
 <!-- Portfolio Modals -->
 
 <!-- Modal 1 -->
-<div class="portfolio-modal modal fade" id="portfolioModal1" php="loadphp" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -149,10 +149,10 @@ $numRows = $db->numRows($result);
                     <div class="rl"></div>
                 </div>
             </div>
-            <div class="container" >
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
+                        <div class=" modal-body">
                             <div id="content">
 
                             </div>
@@ -163,9 +163,6 @@ $numRows = $db->numRows($result);
         </div>
     </div>
 </div>
-
-
-
 
 <?php
 require_once './template/footer.php';

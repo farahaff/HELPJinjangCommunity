@@ -195,21 +195,36 @@ function processApplicationModal(userID, jobID) {
     event.preventDefault();
 }
 
-function updateApplication(userID, jobID, employerID, decision) {
-    var dataString = 'userID=' + userID + '&jobID=' + jobID + '&employerID=' + employerID + '&decision=' + decision;
+function acceptApplication(userID, jobID, employerID) {
+    var dataString = 'userID=' + userID + '&jobID=' + jobID + '&employerID=' + employerID;
     $.ajax({
         type: "POST",
-        url: "updateApplicationSubmission.php",
+        url: "acceptApplicationSubmission.php",
         data: dataString,
         success: function (response) {
             //change the model after click
-            alert("Application has been processed.");
+            alert("Application has been accepted.");
             location.reload();
         }
-
     });
     event.preventDefault();
 }
+
+function rejectApplication(userID, jobID, employerID) {
+    var dataString = 'userID=' + userID + '&jobID=' + jobID + '&employerID=' + employerID;
+    $.ajax({
+        type: "POST",
+        url: "rejectApplicationSubmission.php",
+        data: dataString,
+        success: function (response) {
+            //change the model after click
+            alert("Application has been rejected.");
+            location.reload();
+        }
+    });
+    event.preventDefault();
+}
+
 //update trainer set date through model
 function editJob(jobID) {
     var jobtitle = $("#jobtitle").val();
